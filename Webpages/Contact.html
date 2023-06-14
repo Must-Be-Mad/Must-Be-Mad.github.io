@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Stylesheets/main.css">
+    <link rel="stylesheet" href="../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../images/tabicon.png">
+</head>
+
+<body style="display: flex; flex-direction: column;">
+        <a href="../index.html"><div id="inpage" style="cursor: pointer;"></div></a>
+        <header class="navbar">
+            <button><a class="option" id="cyan" href="Blog.html">Blogs</a></button>
+            <button><a class="option" id="blue" href="Exams.html">Exams</a></button>
+            <button><a class="option" id="lime" href="Jokes.html">Jokes</a></button>
+            <button><a class="option" id="purple" href="Projects.html">Projects</a></button>
+            <button><a class="option" id="pink" href="Contact.html">Contact</a></button>
+        </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em #ff15a9;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bgpink"></div>
+          </div>
+          
+          <div class="ribbon-container" id="ribbon2">
+            <div class="bgpink"></div>
+          </div>
+          
+          <div class="ribbon-container" id="ribbon3">
+            <div class="bgpink"></div>
+          </div>
+          
+          <div class="ribbon-container" id="ribbon4">
+            <div class="bgpink"></div>
+          </div>
+        <div class="content" id="pink">
+            <h1> Contact</h1>
+            <div class="pinkpreviews">
+                <h2 class="pinkpanel"><b>Contact form</b></h2>
+                <form action="https://formspree.io/f/meqwyjbb" method="POST">
+
+                    <div class="form-group">
+                        <label for="Contact reason" class="form-label">Contact reason:</label>
+                        <select name="Contact reason" class="form-dropdown" placeholder="Select One">
+                            <option value="" disabled selected>Select a reason for contact</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Personal">Personal</option>
+                            <option value="General intesest">General Interest</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" name="email" class="form-input" placeholder="Enter your email"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" id="name" name="name" class="form-input"
+                            placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject:</label>
+                        <textarea type="text" name="subject" class="form-input" placeholder="Enter the subject"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message:</label>
+                        <textarea type="text" name="message" class="form-textarea"
+                            placeholder="Enter your message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Submit</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>

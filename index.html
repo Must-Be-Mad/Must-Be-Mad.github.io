@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Stylesheets/main.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="Images/tabicon.png">
+</head>
+
+<body id="index-body">
+    <div id="sidebar-strings">
+        <video id="cyanvid" autoplay muted>
+            <source id="cyansrc" src="Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="pinkvid" autoplay muted>
+            <source id="pinksrc" src="Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="bluevid" autoplay muted>
+            <source id="bluesrc" src="Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="limevid" autoplay muted>
+            <source id="limesrc" src="Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="purplevid" autoplay muted>
+            <source id="purplesrc" src="Images/strings/white.webm" type="video/webm">
+        </video>
+    </div>
+
+    <header class="sidebar">
+        <button onmouseover="strike('cyan')" onclick="preview('cyan')"><a class="option" id="cyan">Blogs</a></button>
+        <button onmouseover="strike('blue')" onclick="preview('blue')"><a class="option" id="blue">Exams</a></button>
+        <button onmouseover="strike('lime')" onclick="preview('lime')"><a class="option" id="lime">Jokes</a></button>
+        <button onmouseover="strike('purple')" onclick="preview('purple')"><a class="option"
+                id="purple">Projects</a></button>
+        <button onmouseover="strike('pink')" onclick="preview('pink')"><a class="option" id="pink">Contact</a></button>
+    </header>
+    <div id="previews">
+        <div class="panelcontainer">
+            <div class="cyanpanel" id="blogprevs">
+            <span id="SeeAll"><a href="Webpages/Blog.html"> See All</a></span>
+                <h1 class="cyanpanel"> Blogs </h1>
+            </div>
+            <div class="limepanel">
+                <span id="SeeAll"><a href="Webpages/Jokes.html"> See All</a></span>
+                <h1 class="limepanel">Jokes</h1>
+                <div class="limepreviews">
+                    <h2 class="limepanel">Click on the Jokes</h2>
+                    <span style="color: rgb(255, 0, 212);">&#9632;</span>: Pick-Up Lines<br>
+                    <span style="color: rgb(255, 0, 0);">&#9632;</span>: Roasts<br>
+                    <span style="color: rgb(0, 0, 0);">&#9632;</span>: Break-up lines
+                </div>
+                <div id="jokes">
+                </div>
+            </div>
+            <div class="purplepanel" id="projprevs">
+                <span id="SeeAll"><a href="Webpages/Projects.html"> See All</a></span>
+                <h1 class="purplepanel">Projects</h1>
+            </div>
+            <div class="bluepanel" id="examprevs">
+                <span id="SeeAll"><a href="Webpages/Exams.html"> See All</a></span>
+                <h1 class="bluepanel">Exams</h1>
+
+            </div>
+            <div class="pinkpanel">
+                <span id="SeeAll"><a href="Webpages/Contact.html"> Full Page</a></span>
+                <h1 class="pinkpanel">Contact</h1>
+                <div >
+                    <div class="pinkpreviews">
+                        <h2 class="pinkpanel"><b>Contact form</b></h2>
+                        <form action="https://formspree.io/f/meqwyjbb" method="POST">
+
+                            <div class="form-group">
+                                <label for="Contact reason" class="form-label">Contact reason:</label>
+                                <select name="Contact reason" class="form-dropdown" placeholder="Select One">
+                                    <option value="" disabled selected>Select a reason for contact</option>
+                                    <option value="Academic">Academic</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="General intesest">General Interest</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-input" placeholder="Enter your email"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" name="name" class="form-input"
+                                    placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject:</label>
+                                <textarea type="text" name="subject" class="form-input" placeholder="Enter the subject"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message:</label>
+                                <textarea type="text" name="message" class="form-textarea"
+                                    placeholder="Enter your message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="title">
+    </div>
+
+    <script>
+        var currentDate = new Date();
+        var targetDate = new Date("4/24/2022");
+        var timeDiff = currentDate.getTime() - targetDate.getTime();
+        var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        var weekdaysDiff = Math.floor(daysDiff/7)*5 +(daysDiff % 7)*(1-Math.floor((daysDiff % 7)/5))+5*Math.floor((daysDiff % 7)/5);
+        window.onload = function () {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                var lines = this.responseText
+                lines = lines.split("\r\n");
+                lines = lines.filter(item => item !== "");
+                const list = [];
+                for (let i = 0; i < lines.length; i += 3) {
+                    list.push([lines[i], lines[i + 1], lines[i + 2]])
+                }
+                for (let i = Math.max(0,list.length-weekdaysDiff); i < 100; i++) {
+                    let joke = "<div class='limepreviews " + list[i][2] + "' onclick=\"dropdown('Joke" + String(i) + "')\"><div>" + list[i][0] + "</div><div id='" + 'Joke' + String(i) + "' style='max-height: 0px; overflow: hidden; transition:0.1s ;'><hr style='color:rgb(233, 233, 233)'>" + list[i][1] + "</div></div>";
+                    document.getElementById("jokes").innerHTML += joke;
+                }
+            }
+            xhttp.open("GET", "Data/jokes.txt", true);
+            xhttp.send();
+
+            const xam = new XMLHttpRequest();
+            xam.onload = function(){
+                var file = this.responseText
+                var start = file.indexOf("<!--Marker start-->") + "<!--Marker start-->".length
+                var end = file.indexOf("<!--Marker end-->")
+                result = file.substring(start, end)
+                document.getElementById("examprevs").innerHTML += result;
+            }
+            xam.open("GET", "Webpages/Exams.html", true);
+            xam.send();
+
+            const xblog = new XMLHttpRequest();
+            xblog.onload = function(){
+                var file = this.responseText
+                var start = file.indexOf("<!--Marker start-->") + "<!--Marker start-->".length
+                var end = file.indexOf("<!--Marker end-->")
+                result = file.substring(start, end)
+                document.getElementById("blogprevs").innerHTML += result;
+            }
+            xblog.open("GET", "Webpages/Blog.html", true);
+            xblog.send();
+            
+            const xproj = new XMLHttpRequest();
+            xproj.onload = function(){
+                var file = this.responseText
+                var start = file.indexOf("<!--Marker start-->") + "<!--Marker start-->".length
+                var end = file.indexOf("<!--Marker end-->")
+                result = file.substring(start, end)
+                document.getElementById("projprevs").innerHTML += result;
+            }
+            xproj.open("GET", "Webpages/Projects.html", true);
+            xproj.send();
+        }
+        function dropdown(ID) {
+            const punchline = document.getElementById(ID)
+            if (punchline.classList.contains("open")) {
+                punchline.style.maxHeight = 0;
+            }
+            else {
+                punchline.style.maxHeight = punchline.scrollHeight + "px";
+            }
+            punchline.classList.toggle("open")
+        }
+        function preview(colour) {
+            let panel = document.getElementById('previews');
+            let button = document.getElementById(colour);
+            let options = document.getElementsByClassName("option");
+            for (var i = 0; i < options.length; i++) {
+                if (options[i] != button) {
+                    options[i].classList.remove("clicked");
+                    options[i].style.opacity = 0.4;
+                }
+                else {
+                    options[i].style.opacity = 1;
+                }
+            }
+            panel.className = "";
+            panel.classList.toggle('open');
+            if (button.classList.contains("clicked")) {
+                panel.classList.toggle('open');
+                for (var i = 0; i < options.length; i++) {
+                    options[i].style.opacity = 1;
+                }
+            }
+            button.classList.toggle("clicked");
+            panel.classList.add(colour);
+            if (window.matchMedia("(max-width: 650px)").matches){
+                panel.style.borderTopColor = window.getComputedStyle(document.getElementById(colour)).color;
+            }
+            else if (window.matchMedia("(max-width:1150px)").matches){
+                
+            panel.style.borderLeftColor = window.getComputedStyle(document.getElementById(colour)).color;
+            }
+            else{
+            panel.style.borderRightColor = window.getComputedStyle(document.getElementById(colour)).color;
+            }
+            if (panel.classList.contains("open")) {
+                for (const colours of ["cyan", "pink", "blue", "lime", "purple"]) {
+                    if (colours != colour) {
+                        document.getElementsByClassName(colours + "panel")[0].style.display = "none"
+                    }
+                    else {
+                        {
+                            document.getElementsByClassName(colours + "panel")[0].style.display = "block"
+                        }
+                    }
+                }
+            }
+
+        }
+        let timerID;
+        function white() {
+            document.getElementById("sidebar-strings").style.backgroundImage = "url(Images/strings/blue.gif)"
+        }
+        function strike(colour) {
+            let vid = document.getElementById(colour + 'vid');
+            document.getElementById(colour + 'src').src = 'Images/strings/' + colour + '.webm';
+            vid.load();
+
+            vid.currentTime = 0;
+            vid.play();
+
+            vid.addEventListener('ended', function () {
+                document.getElementById(colour + 'src').src = 'Images/strings/white.webm';
+                vid.load();
+                vid.currentTime = 0;
+                vid.play();
+            });
+        }
+    </script>
+</body>
+
+</html>
