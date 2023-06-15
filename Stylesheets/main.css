@@ -493,7 +493,8 @@ p{
         bottom:0;
     }
         #previews.open {
-            height: 80vh;
+            width: 100vw;
+            height: 75vh;
             border-top: 0.8em solid;
             border-left:0;
         }
