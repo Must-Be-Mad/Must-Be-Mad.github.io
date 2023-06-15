@@ -26,7 +26,6 @@
     pointer-events: none;
     
   }
-
 #ribbon1 div{
     width: 500px;
     height: 20px;
@@ -93,14 +92,14 @@
     grid-template-columns: repeat(5, 1fr);
     border-style: none;
     background-color: none;
-    font-family: "Bitter";
+    font-family: 'Bitter', 'Georgia' ;
     background-color: black;
     font-size: 1vw;
     overflow: hidden;
   }
   .navbar button {
     text-align: left;
-    font-family: "Bitter";
+    font-family: 'Bitter', 'Georgia' ;
     font-size: 1.8em;
     margin: 0.5em 0.5em 0.5em 0.2em;
     background: none;
