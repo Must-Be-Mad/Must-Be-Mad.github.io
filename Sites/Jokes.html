@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Stylesheets/main.css">
+    <link rel="stylesheet" href="../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../images/tabicon.png">
+
+    <script>
+        function dropdown(ID) {
+            console.log(ID + " loaded")
+            const punchline = document.getElementById(ID)
+            if (punchline.classList.contains("open")) {
+                punchline.style.maxHeight = 0;
+            }
+            else {
+                punchline.style.maxHeight = punchline.scrollHeight + "px";
+            }
+            punchline.classList.toggle("open")
+        }
+        const limepreviews = document.getElementsByClassName('limepreviews');
+
+        window.onload = function () {
+            var currentDate = new Date();
+            var targetDate = new Date("4/24/2022");
+            var timeDiff = currentDate.getTime() - targetDate.getTime();
+            var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            var weekdaysDiff = Math.floor(daysDiff/7)*5 +(daysDiff % 7)*(1-Math.floor((daysDiff % 7)/5))+5*Math.floor((daysDiff % 7)/5);
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                var lines = this.responseText
+                lines = lines.split("\r\n");
+                lines = lines.filter(item => item !== "");
+                const list = [];
+                for (let i = 0; i < lines.length; i += 3) {
+                    list.push([lines[i], lines[i + 1], lines[i+2]])
+                }
+                for (let i = Math.max(0, list.length-weekdaysDiff); i < list.length; i++) {
+                    let joke = "<div class='limepreviews " + list[i][2] + "' onClick=\"dropdown('Joke" + String(i) + "')\"><div>" + list[i][0] + "</div><div id='" + 'Joke' + String(i) + "' style='max-height: 0px; overflow: hidden; transition:0.1s ;'><hr style='color:rgb(233, 233, 233)'>" + list[i][1] + "</div></div>";
+                    document.getElementById("jokes").innerHTML += joke;
+                }
+            }
+            xhttp.open("GET", "../Data/jokes.txt", true);
+            xhttp.send();
+            for (let i = 0; i < limepreviews.length; i++) {
+                limepreviews[i].addEventListener('click', function () {
+                    dropdown('Joke' + i);
+                });
+            }
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <a href="Home.html">
+        <div id="inpage" style="cursor: pointer;"></div>
+    </a>
+    <header class="navbar">
+        <button><a class="option" id="cyan" href="Blog.html">Blogs</a></button>
+        <button><a class="option" id="blue" href="Exams.html">Exams</a></button>
+        <button><a class="option" id="lime" href="Jokes.html">Jokes</a></button>
+        <button><a class="option" id="purple" href="Projects.html">Projects</a></button>
+        <button><a class="option" id="pink" href="Contact.html">Contact</a></button>
+    </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em  #9dff4d;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bglime"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon2">
+            <div class="bglime"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon3">
+            <div class="bglime"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon4">
+            <div class="bglime"></div>
+        </div>
+        <div class="content" id="lime">
+            <h1> Jokes</h1>
+            <div class="limepreviews" style="color:black;">
+                <h2 class="limepanel">What's this about?</h2>
+                Since the end of Year 12, I have made awful maths and physics puns and jokes to my friends through
+                WhatsApp daily (minus non-school/uni days). However now, I have uploaded them all here, and should
+                hopefully be bringing new ones in regularly. Click on the jokes to see the punchline.<br><br>
+                <span style="color: rgb(255, 0, 212);">&#9632;</span>: Pick-Up Lines<br>
+                <span style="color: rgb(255, 0, 0);">&#9632;</span>: Roasts<br>
+                <span style="color: rgb(0, 0, 0);">&#9632;</span>: Break-up lines
+            </div>
+            <div id="jokes" class="content-layout">
+
+            </div>
+        </div>
+    </div>
+</body>
