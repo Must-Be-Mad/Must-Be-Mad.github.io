@@ -8,15 +8,6 @@
     <link rel="stylesheet" href="../Stylesheets/main.css">
     <title>I Must be Mad</title>
     <link rel="icon" href="../Images/tabicon.png">
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "320ab039-0384-43c1-b7d9-97389cedc778",
-    });
-  });
-</script>
 </head>
 
 <body id="index-body">
@@ -49,7 +40,7 @@
     <div id="previews">
         <div class="panelcontainer">
             <div class="cyanpanel" id="blogprevs">
-            <span id="SeeAll"><a href="Blog.html"> See All</a></span>
+                <span id="SeeAll"><a href="Blog.html"> See All</a></span>
                 <h1 class="cyanpanel"> Blogs </h1>
             </div>
             <div class="limepanel">
@@ -76,7 +67,7 @@
             <div class="pinkpanel">
                 <span id="SeeAll"><a href="Contact.html"> Full Page</a></span>
                 <h1 class="pinkpanel">Contact</h1>
-                <div >
+                <div>
                     <div class="pinkpreviews">
                         <h2 class="pinkpanel"><b>Contact form</b></h2>
                         <form action="https://formspree.io/f/meqwyjbb" method="POST">
@@ -123,13 +114,17 @@
     </div>
     <div class="title">
     </div>
-
     <script>
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
         var currentDate = new Date();
         var targetDate = new Date("4/24/2022");
         var timeDiff = currentDate.getTime() - targetDate.getTime();
         var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        var weekdaysDiff = Math.floor(daysDiff/7)*5 +(daysDiff % 7)*(1-Math.floor((daysDiff % 7)/5))+5*Math.floor((daysDiff % 7)/5);
+        var weekdaysDiff = Math.floor(daysDiff / 7) * 5 + (daysDiff % 7) * (1 - Math.floor((daysDiff % 7) / 5)) + 5 * Math.floor((daysDiff % 7) / 5);
         window.onload = function () {
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
@@ -140,7 +135,7 @@
                 for (let i = 0; i < lines.length; i += 3) {
                     list.push([lines[i], lines[i + 1], lines[i + 2]])
                 }
-                for (let i = Math.max(0,list.length-weekdaysDiff); i < 100; i++) {
+                for (let i = Math.max(0, list.length - weekdaysDiff); i < 100; i++) {
                     let joke = "<div class='limepreviews " + list[i][2] + "' onclick=\"dropdown('Joke" + String(i) + "')\"><div>" + list[i][0] + "</div><div id='" + 'Joke' + String(i) + "' style='max-height: 0px; overflow: hidden; transition:0.1s ;'><hr style='color:rgb(233, 233, 233)'>" + list[i][1] + "</div></div>";
                     document.getElementById("jokes").innerHTML += joke;
                 }
@@ -149,7 +144,7 @@
             xhttp.send();
 
             const xam = new XMLHttpRequest();
-            xam.onload = function(){
+            xam.onload = function () {
                 var file = this.responseText
                 var start = file.indexOf("<!--Marker start-->") + "<!--Marker start-->".length
                 var end = file.indexOf("<!--Marker end-->")
@@ -160,7 +155,7 @@
             xam.send();
 
             const xblog = new XMLHttpRequest();
-            xblog.onload = function(){
+            xblog.onload = function () {
                 var file = this.responseText
                 var start = file.indexOf("<!--Marker start-->") + "<!--Marker start-->".length
                 var end = file.indexOf("<!--Marker end-->")
@@ -169,9 +164,9 @@
             }
             xblog.open("GET", "Blog.html", true);
             xblog.send();
-            
+
             const xproj = new XMLHttpRequest();
-            xproj.onload = function(){
+            xproj.onload = function () {
                 var file = this.responseText
                 var start = file.indexOf("<!--Marker start-->") + "<!--Marker start-->".length
                 var end = file.indexOf("<!--Marker end-->")
@@ -192,6 +187,7 @@
             punchline.classList.toggle("open")
         }
         function preview(colour) {
+
             let panel = document.getElementById('previews');
             let button = document.getElementById(colour);
             let options = document.getElementsByClassName("option");
@@ -214,14 +210,14 @@
             }
             button.classList.toggle("clicked");
             panel.classList.add(colour);
-            if (window.matchMedia("(max-width: 650px)").matches){
+            if (window.matchMedia("(max-width: 650px)").matches) {
                 panel.style.borderTopColor = window.getComputedStyle(document.getElementById(colour)).color;
             }
-            else if (window.matchMedia("(max-width:1150px)").matches){
-            panel.style.borderLeftColor = window.getComputedStyle(document.getElementById(colour)).color;
+            else if (window.matchMedia("(max-width:1150px)").matches) {
+                panel.style.borderLeftColor = window.getComputedStyle(document.getElementById(colour)).color;
             }
-            else{
-            panel.style.borderRightColor = window.getComputedStyle(document.getElementById(colour)).color;
+            else {
+                panel.style.borderRightColor = window.getComputedStyle(document.getElementById(colour)).color;
             }
             if (panel.classList.contains("open")) {
                 for (const colours of ["cyan", "pink", "blue", "lime", "purple"]) {
@@ -257,6 +253,8 @@
             });
         }
     </script>
+
+<button class="notifications" onclick="subscribeToNotifications()"><a>Subscribe</a></button>
 </body>
 
 </html>
