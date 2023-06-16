@@ -17,7 +17,16 @@
             });
         });
         function subscribeToNotifications() {
-           OneSignal.push(['registerForPushNotifications']);
+  OneSignal.push(function() {
+    OneSignal.registerForPushNotifications({
+      modalPrompt: true,
+      autoAcceptTitle: 'Click Allow',
+      autoAcceptBody: 'to receive web push notifications',
+      notifyButton: {
+        enable: false // Disable the bell-shaped notification button
+      }
+    });
+  });
         }
         var currentDate = new Date();
         var targetDate = new Date("4/24/2022");
