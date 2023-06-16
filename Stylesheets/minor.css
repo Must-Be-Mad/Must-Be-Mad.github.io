@@ -113,8 +113,9 @@
 }
 .content h1{
     padding: 0 5%;
+    filter: brightness(0.9);
     margin-bottom: 100px;
-    font-size: clamp(18px,10vw ,56px);
+    font-size: clamp(20px, 6vw ,45px);
     text-decoration: underline;
 }
 .content-layout{
@@ -123,7 +124,23 @@
      grid-template-columns: repeat(3, 1fr);
      column-gap: 50px;
 }
+.imageparagraph{
+  display: flex;
+  flex-direction: row;
+}
+.imageparagraph img{
+  width:30%;
+  margin-left: 30px;
+}
 @media (max-width:1300px) {
+  .imageparagraph{
+    align-items: center;
+    flex-direction: column;
+  }
+  .imageparagraph img{
+    width:50%;
+    margin-left: 30px;
+  }
     .content-container{
         font-size: 16px;
         width: 100vw;
