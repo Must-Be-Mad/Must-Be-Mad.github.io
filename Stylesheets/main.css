@@ -1,3 +1,4 @@
+
 html {
     box-sizing: border-box;
     font-family: 'Bitter', 'Georgia' ;
@@ -7,6 +8,45 @@ html {
 *:before,
 *:after {
     box-sizing: inherit;
+}
+
+.notifications {
+    position: fixed;
+    width: max-content;
+    height: 2.3em;
+    font-size: 1.8em;
+    right: 0;
+    bottom:20px;
+    color:white;
+    font-family: 'Bitter', 'Georgia';
+    border:none;
+    background: none;
+}
+.notifications a{
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: left;
+    letter-spacing: 0.15em;
+
+    display: inline-block;
+    padding: 15px 20px;
+}
+.notifications a:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0.5em;
+    position: absolute;
+    background: currentColor;
+    transition: width 0.6s ease 0s, left 0s ease 0s;
+    width: 0;
+}
+
+.notifications a:hover:after {
+    width: calc(100% - 1em);
+    left: 0.5em;
 }
 
 /*pinkpanel form*/
