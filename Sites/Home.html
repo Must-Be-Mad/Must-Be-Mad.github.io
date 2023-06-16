@@ -8,19 +8,8 @@
     <link rel="stylesheet" href="../Stylesheets/main.css">
     <title>I Must be Mad</title>
     <link rel="icon" href="../Images/tabicon.png">
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../OneSignalSDKWorker.js')
-                .then(function (registration) {
-                    console.log('Service Worker registered successfully:', registration);
-                })
-                .catch(function (error) {
-                    console.log('Service Worker registration failed:', error);
-                });
-        }
-    </script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
-    <script src="../OneSignalSDKWorker.js" async>
+    <script>
         window.OneSignal = window.OneSignal || [];
         OneSignal.push(function () {
             OneSignal.init({
@@ -32,114 +21,6 @@
                 OneSignal.registerForPushNotifications();
             });
         }
-    </script>
-</head>
-
-<body id="index-body">
-    <div id="sidebar-strings">
-        <video id="cyanvid" autoplay muted>
-            <source id="cyansrc" src="../Images/strings/white.webm" type="video/webm">
-        </video>
-        <video id="pinkvid" autoplay muted>
-            <source id="pinksrc" src="../Images/strings/white.webm" type="video/webm">
-        </video>
-        <video id="bluevid" autoplay muted>
-            <source id="bluesrc" src="../Images/strings/white.webm" type="video/webm">
-        </video>
-        <video id="limevid" autoplay muted>
-            <source id="limesrc" src="../Images/strings/white.webm" type="video/webm">
-        </video>
-        <video id="purplevid" autoplay muted>
-            <source id="purplesrc" src="../Images/strings/white.webm" type="video/webm">
-        </video>
-    </div>
-
-    <header class="sidebar">
-        <button onmouseover="strike('cyan')" onclick="preview('cyan')"><a class="option" id="cyan">Blogs</a></button>
-        <button onmouseover="strike('blue')" onclick="preview('blue')"><a class="option" id="blue">Exams</a></button>
-        <button onmouseover="strike('lime')" onclick="preview('lime')"><a class="option" id="lime">Jokes</a></button>
-        <button onmouseover="strike('purple')" onclick="preview('purple')"><a class="option"
-                id="purple">Projects</a></button>
-        <button onmouseover="strike('pink')" onclick="preview('pink')"><a class="option" id="pink">Contact</a></button>
-    </header>
-    <div id="previews">
-        <div class="panelcontainer">
-            <div class="cyanpanel" id="blogprevs">
-                <span id="SeeAll"><a href="Blog.html"> See All</a></span>
-                <h1 class="cyanpanel"> Blogs </h1>
-            </div>
-            <div class="limepanel">
-                <span id="SeeAll"><a href="Jokes.html"> See All</a></span>
-                <h1 class="limepanel">Jokes</h1>
-                <div class="limepreviews">
-                    <h2 class="limepanel">Click on the Jokes</h2>
-                    <span style="color: rgb(255, 0, 212);">&#9632;</span>: Pick-Up Lines<br>
-                    <span style="color: rgb(255, 0, 0);">&#9632;</span>: Roasts<br>
-                    <span style="color: rgb(0, 0, 0);">&#9632;</span>: Break-up lines
-                </div>
-                <div id="jokes">
-                </div>
-            </div>
-            <div class="purplepanel" id="projprevs">
-                <span id="SeeAll"><a href="Projects.html"> See All</a></span>
-                <h1 class="purplepanel">Projects</h1>
-            </div>
-            <div class="bluepanel" id="examprevs">
-                <span id="SeeAll"><a href="Exams.html"> See All</a></span>
-                <h1 class="bluepanel">Exams</h1>
-
-            </div>
-            <div class="pinkpanel">
-                <span id="SeeAll"><a href="Contact.html"> Full Page</a></span>
-                <h1 class="pinkpanel">Contact</h1>
-                <div>
-                    <div class="pinkpreviews">
-                        <h2 class="pinkpanel"><b>Contact form</b></h2>
-                        <form action="https://formspree.io/f/meqwyjbb" method="POST">
-
-                            <div class="form-group">
-                                <label for="Contact reason" class="form-label">Contact reason:</label>
-                                <select name="Contact reason" class="form-dropdown" placeholder="Select One">
-                                    <option value="" disabled selected>Select a reason for contact</option>
-                                    <option value="Academic">Academic</option>
-                                    <option value="Personal">Personal</option>
-                                    <option value="General intesest">General Interest</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="email" name="email" class="form-input" placeholder="Enter your email"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="form-label">Name:</label>
-                                <input type="text" id="name" name="name" class="form-input"
-                                    placeholder="Enter your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject" class="form-label">Subject:</label>
-                                <textarea type="text" name="subject" class="form-input" placeholder="Enter the subject"
-                                    required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="form-label">Message:</label>
-                                <textarea type="text" name="message" class="form-textarea"
-                                    placeholder="Enter your message" required></textarea>
-                            </div>
-
-                            <button type="submit" class="form-submit">Submit</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="title">
-    </div>
-    <script>
         var currentDate = new Date();
         var targetDate = new Date("4/24/2022");
         var timeDiff = currentDate.getTime() - targetDate.getTime();
@@ -273,6 +154,113 @@
             });
         }
     </script>
+</head>
+
+<body id="index-body">
+    <div id="sidebar-strings">
+        <video id="cyanvid" autoplay muted>
+            <source id="cyansrc" src="../Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="pinkvid" autoplay muted>
+            <source id="pinksrc" src="../Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="bluevid" autoplay muted>
+            <source id="bluesrc" src="../Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="limevid" autoplay muted>
+            <source id="limesrc" src="../Images/strings/white.webm" type="video/webm">
+        </video>
+        <video id="purplevid" autoplay muted>
+            <source id="purplesrc" src="../Images/strings/white.webm" type="video/webm">
+        </video>
+    </div>
+
+    <header class="sidebar">
+        <button onmouseover="strike('cyan')" onclick="preview('cyan')"><a class="option" id="cyan">Blogs</a></button>
+        <button onmouseover="strike('blue')" onclick="preview('blue')"><a class="option" id="blue">Exams</a></button>
+        <button onmouseover="strike('lime')" onclick="preview('lime')"><a class="option" id="lime">Jokes</a></button>
+        <button onmouseover="strike('purple')" onclick="preview('purple')"><a class="option"
+                id="purple">Projects</a></button>
+        <button onmouseover="strike('pink')" onclick="preview('pink')"><a class="option" id="pink">Contact</a></button>
+    </header>
+    <div id="previews">
+        <div class="panelcontainer">
+            <div class="cyanpanel" id="blogprevs">
+                <span id="SeeAll"><a href="Blog.html"> See All</a></span>
+                <h1 class="cyanpanel"> Blogs </h1>
+            </div>
+            <div class="limepanel">
+                <span id="SeeAll"><a href="Jokes.html"> See All</a></span>
+                <h1 class="limepanel">Jokes</h1>
+                <div class="limepreviews">
+                    <h2 class="limepanel">Click on the Jokes</h2>
+                    <span style="color: rgb(255, 0, 212);">&#9632;</span>: Pick-Up Lines<br>
+                    <span style="color: rgb(255, 0, 0);">&#9632;</span>: Roasts<br>
+                    <span style="color: rgb(0, 0, 0);">&#9632;</span>: Break-up lines
+                </div>
+                <div id="jokes">
+                </div>
+            </div>
+            <div class="purplepanel" id="projprevs">
+                <span id="SeeAll"><a href="Projects.html"> See All</a></span>
+                <h1 class="purplepanel">Projects</h1>
+            </div>
+            <div class="bluepanel" id="examprevs">
+                <span id="SeeAll"><a href="Exams.html"> See All</a></span>
+                <h1 class="bluepanel">Exams</h1>
+
+            </div>
+            <div class="pinkpanel">
+                <span id="SeeAll"><a href="Contact.html"> Full Page</a></span>
+                <h1 class="pinkpanel">Contact</h1>
+                <div>
+                    <div class="pinkpreviews">
+                        <h2 class="pinkpanel"><b>Contact form</b></h2>
+                        <form action="https://formspree.io/f/meqwyjbb" method="POST">
+
+                            <div class="form-group">
+                                <label for="Contact reason" class="form-label">Contact reason:</label>
+                                <select name="Contact reason" class="form-dropdown" placeholder="Select One">
+                                    <option value="" disabled selected>Select a reason for contact</option>
+                                    <option value="Academic">Academic</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="General intesest">General Interest</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-input" placeholder="Enter your email"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" name="name" class="form-input"
+                                    placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject:</label>
+                                <textarea type="text" name="subject" class="form-input" placeholder="Enter the subject"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message:</label>
+                                <textarea type="text" name="message" class="form-textarea"
+                                    placeholder="Enter your message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="title">
+    </div>
+    
 
     <button class="notifications" onclick="subscribeToNotifications()"><a>Subscribe</a></button>
 </body>
