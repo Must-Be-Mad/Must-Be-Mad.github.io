@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="../Stylesheets/main.css">
     <title>I Must be Mad</title>
     <link rel="icon" href="../Images/tabicon.png">
-    <script src="../OneSignalSDKWorker.js" async>
+    <script src="../OneSignalSDK.js" async>
         window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+            });
         });
-      });
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
     </script>
 </head>
 
@@ -123,11 +128,6 @@
     <div class="title">
     </div>
     <script>
-        function subscribeToNotifications() {
-            OneSignal.push(function () {
-                OneSignal.registerForPushNotifications();
-            });
-        }
         var currentDate = new Date();
         var targetDate = new Date("4/24/2022");
         var timeDiff = currentDate.getTime() - targetDate.getTime();
@@ -262,7 +262,7 @@
         }
     </script>
 
-<button class="notifications" onclick="subscribeToNotifications()"><a>Subscribe</a></button>
+    <button class="notifications" onclick="subscribeToNotifications()"><a>Subscribe</a></button>
 </body>
 
 </html>
