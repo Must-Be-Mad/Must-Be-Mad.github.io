@@ -17,9 +17,7 @@
             });
         });
         function subscribeToNotifications() {
-            OneSignal.push(function () {
-                OneSignal.registerForPushNotifications();
-            });
+           OneSignal.push(['registerForPushNotifications']);
         }
         var currentDate = new Date();
         var targetDate = new Date("4/24/2022");
