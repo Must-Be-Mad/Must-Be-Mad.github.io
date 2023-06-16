@@ -138,7 +138,7 @@
     flex-direction: column;
   }
   .imageparagraph img{
-    width:50%;
+    width:min(50%,300px);
     margin-left: 30px;
   }
     .content-container{
