@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../Stylesheets/minor.css">
     <title>I Must be Mad</title>
     <link rel="icon" href="../Images/tabicon.png">
-     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
     <script>
         window.OneSignal = window.OneSignal || [];
         OneSignal.push(function () {
@@ -18,11 +18,11 @@
             });
         });
         function subscribeToNotifications() {
-OneSignal.push(function() {
-  OneSignal.registerForPushNotifications();
-});
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
         }
-</script>
+    </script>
 </head>
 
 <body style="display: flex; flex-direction: column;">
@@ -58,38 +58,51 @@ OneSignal.push(function() {
             <h1> Blogs</h1>
             <div class="cyanpreviews" style="color:black;">
                 <h2 class="cyanpanel">What is this blog?</h2>
-                This blog has a lot to it. Sometimes I want to talk about my university, other times a bit of cool maths. I have a bit of this and a bit of that, but hopefully, in the end, you will find it all an interesting read.
-
+                This blog has a lot to it. Sometimes I want to talk about my university, other times a bit of cool
+                maths. I have a bit of this and a bit of that, but hopefully, in the end, you will find it all an
+                interesting read.
             </div>
             <div id="exams" class="content-layout">
                 <!--Marker start-->
-                <div class="cyanpreviews">
-                    <h2 class="cyanpanel"><b>Who am I?</b></h2>
-                    <p>A very philosophical question that is, but I can answer it... I hope. Mathematics student,
-                    comedian(ish), a really awesome humble guy, I just like to <i>do</i> stuff. How's that for my first
-                    Blog synopsis!</p>
-                </div>
+                <a href="Blogs/Who-am-I.html" style="text-decoration: none; color:black">
+                    <div class="cyanpreviews">
+                        <h2 class="cyanpanel"><b>Who am I?</b></h2>
+                        <p>A very philosophical question that is, but I can answer it... I hope. Mathematics student,
+                            comedian(ish), a really awesome humble guy, I just like to <i>do</i> stuff. How's that for
+                            my first
+                            Blog synopsis!</p>
+                    </div>
+                </a>
+                <a href="Blogs/Exam-Stress.html" style="text-decoration: none; color:black">
+                    <div class="cyanpreviews">
+                        <h2 class="cyanpanel"><b>Dealing with exam stress, my way</b></h2>
+                        <p>In general, I don't easily get fazed by exams. Don't get me wrong, I will bawl my eyes out
+                            when I don't get the result I want, but in the run up, there are some methods I have come up
+                            with
+                            to help me feel... not awful. So, using my powers of making myself feel better, I will
+                            attempt
+                            the
+                            daring feat of trying to help you, the reader, feel less stress.</p>
+                    </div>
+                </a>
+                <!--Marker end-->
                 <div class="cyanpreviews">
                     <h2 class="cyanpanel"><b>Where to draw the comedic line?</b></h2>
-                    <p>It's always in the news. You hear one thing about a comedian (usually Jimmy Carr), being cancelled
-                    or whatever for saying a joke in poor taste. I do comedy (at a stretch I do it <s>well</s> okayish),
-                    so I feel entitled like everyone else on the internet to put in my two-pence worth.</p>
+                    <p>It's always in the news. You hear one thing about a comedian (usually Jimmy Carr), being
+                        cancelled
+                        or whatever for saying a joke in poor taste. I do comedy (at a stretch I do it <s>well</s>
+                        okayish),
+                        so I feel entitled like everyone else on the internet to put in my two-pence worth.</p>
                 </div>
                 <div class="cyanpreviews">
                     <h2 class="cyanpanel"><b>Are cars really that bad?</b></h2>
-                    <p>The short answer, which seems to be the general consensus, is yes. And I'm not willing to disagree
-                    (after all, this is not my area of expertise). However, any time anyone (online) talks about
-                    replacing cars with public transport and biking, the argument is pretty one-sided. My points here
-                    are gonna likely be easily defeated, but the reasons aren't inherently obvious to me.</p>
+                    <p>The short answer, which seems to be the general consensus, is yes. And I'm not willing to
+                        disagree
+                        (after all, this is not my area of expertise). However, any time anyone (online) talks about
+                        replacing cars with public transport and biking, the argument is pretty one-sided. My points
+                        here
+                        are gonna likely be easily defeated, but the reasons aren't inherently obvious to me.</p>
                 </div>
-                <div class="cyanpreviews">
-                    <h2 class="cyanpanel"><b>Dealing with exam stress, my way</b></h2>
-                    <p>In general, I don't easily get fazed by exams. Don't get me wrong, I will bawl my eyes out
-                    when I don't get the result I want, but in the run up, there are some methods I have come up with
-                    to help me feel... not awful. So, using my powers of making myself feel better, I will attempt the
-                    daring feat of trying to help you, the reader, feel less stress.</p>
-                </div>
-                <!--Marker end-->
             </div>
         </div>
     </div>
