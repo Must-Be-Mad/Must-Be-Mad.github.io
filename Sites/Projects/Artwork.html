@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Stylesheets/main.css">
+    <link rel="stylesheet" href="../../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../../Images/tabicon.png">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+            });
+        });
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
+        var items = document.getElementsByClassName("projectitem")
+        var position = 0
+        function reset() {
+            console.log("reset")
+            for (var i = 0; i < items.length; i++) {
+                if (i < position) {
+                    items[i].style.left = "-120%"
+                    items[i].style.position = "absolute"
+                }
+                else if (i == position) {
+                    items[i].style.left = "0"
+                    items[i].style.position = "relative"
+                }
+                else {
+                    items[i].style.left = "120%"
+                    items[i].style.position = "absolute"
+                }
+            }
+        }
+        function moveright() {
+            console.log(position)
+            if (position + 1 < items.length) {
+                position += 1
+                reset()
+            }
+        }
+        function moveleft() {
+            console.log(position)
+            if (position > 0) {
+                position -= 1
+                reset()
+            }
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <a href="../Home.html">
+        <div id="inpage" style="cursor: pointer;"></div>
+    </a>
+    <header class="navbar">
+        <button><a class="option" id="cyan" href="../Blog.html">Blogs</a></button>
+        <button><a class="option" id="blue" href="../Exams.html">Exams</a></button>
+        <button><a class="option" id="lime" href="../Jokes.html">Jokes</a></button>
+        <button><a class="option" id="purple" href="../Projects.html">Projects</a></button>
+        <button><a class="option" id="pink" href="../Contact.html">Contact</a></button>
+    </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em  #8f0aff;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon2">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon3">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon4">
+            <div class="bgpurple"></div>
+        </div>
+        <div style="margin-top:30px; margin-right:30px; left:auto; text-align: right; font-size: 1.2em;">
+            <a href="../Projects.html" style="cursor: pointer; text-decoration: none;color:black;">◄ Return to
+                Projects</a>
+        </div>
+        <div class="content" id="purple">
+            <h1> Artwork</h1>
+            <div class="project-navigation">
+                <button id="purple" onclick="moveleft()">&#129144;</button>
+                <button id="purple" onclick="moveright()">&#129146;</button>
+            </div>
+            <div class="projectcarousel">
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The Art Project</h2>
+                        <p style="text-align: center;">I, much like most people, found myself absolutely bored
+                            throughout the year of 2020. As a result, much like those
+                            people, I found myself a hobby. 10 guesses what that was. That's right! I practiced the
+                            yo-yo. On the side I also
+                            did a small thing called drawing portraits. Needless to say; that was fun. Also, it was
+                            very, <i>very</i> bad.
+                            As a result, feel free to click through a year's worth of drawing and see myself get
+                            slightly better. In addition
+                            to that, feel free to read my notes on them all.
+                        </p>
+                        
+                        <img src="..\..\Images\Artwork\22. Heath Ledger Joker (Major).png" style="width:30%">
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Leonardo Dicaprio</h2>
+                        <img src="..\..\Images\Artwork\1. Dicrapio (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">So the first of the train. Pretty much testing the waters for
+                            art. Eyes are clearly a strong suit; everything else needs work My general learning
+                            background was the basic 'working by halves' technique. Here was my first time using grids
+                            (I use dots since lines come easy for me to visualise). Anyway. First lesson, hair is
+                            spaghetti like. I should have mimicked the density I used on the side for the foreground.
+                            Also, blending is a big issue.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">John Constantine</h2>
+                        <img src="..\..\Images\Artwork\2. John Constantine (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">I was just testing out Staedtler pencils. Basically got lazy and
+                            tried to do things quickly. Clearly patience is key.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Joker</h2>
+                        <img src="..\..\Images\Artwork\3. Ledger Joker (B&W).jpg" style="width:60%">
+                        <p style="text-align: center;">Woah Woah Woah; clearly I'm going to fast. Still has a bit of
+                            spaghetti hair. This angle and detail level is just too much for someone with too little
+                            experience
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Joker</h2>
+                        <img src="..\..\Images\Artwork\4. Ledger Joker (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">This is much better. Still has Spaghetti hair but has shading in
+                            the background so none of the white shines through. Proportions are slightly off. Clearly
+                            I'm failing on hair on all accounts of colour, proportion and shape; I should do more </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">River Song</h2>
+                        <img src="..\..\Images\Artwork\5. River Song (B&W).jpg" style="width:60%">
+                        <p style="text-align: center;">Hair has finally been textured. Shading was a huge let down. I
+                            should have payed further attention to the reference.</p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Murph</h2>
+                        <img src="..\..\Images\Artwork\6. Murph (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">Hair technique is on point now, now I need to refine it. Skin
+                            tones are clearly a problem but clothes seem to be working well. Lips need a bit of
+                            refinement too</p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Mr Micawber</h2>
+                        <img src="..\..\Images\Artwork\7. Mr Micawber (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">Better texture and shading. Teeth needs work and details need to
+                            be improved upon by a large degree. I might procrastinate on teeth for now :p.</p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Cooper</h2>
+                        <img src="..\..\Images\Artwork\8. Cooper (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">Proportions and expression with a touch of shading needs to be
+                            improved for my pieces</p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Ra's Al Ghul</h2>
+                        <img src="..\..\Images\Artwork\9. Ra'as Al Ghul (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">Pretty good proportions and texturing. Sketchy look needs to
+                            change and the outline looks too square and straight; I need to work on better shaping
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Ariadne</h2>
+                        <img src="..\..\Images\Artwork\10. Ariadne (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">Much better. Only real issue here is the skin; looks too tanned.
+                            Take liberties with the reference; if I know that I'm not ready for warmer lighting, don't
+                            go crazy with the orange pencil on the face
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Vampire Batman (yes this was named
+                            afterwards)
+                        </h2>
+                        <img src="..\..\Images\Artwork\11. Batman (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            Easily the worst of the lot. It was a wake up call that I need to have a better
+                            understanding of colour so I could implement shades much better. Giving up and then
+                            scribbling the skin tones in at the end didn't help either. But I do want to point out that
+                            it's OK to point out a lost cause and move on if you're not getting anywhere
+
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Missy
+                        </h2>
+                        <img src="..\..\Images\Artwork\12. Missy (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            I'm really happy with the hat; colour was well done but still issues with shading and
+                            texture. Scratchiness has been reduced but layering needs to be implemented (not that I knew
+                            that at the time)
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Roderick
+                        </h2>
+                        <img src="..\..\Images\Artwork\13. Rodrick (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            Basic shape and ideas conveyed to give a realistic image. Weird
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Constantine
+                        </h2>
+                        <img src="..\..\Images\Artwork\14. John Constantine (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            A bit sketchy and squarish.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Clark Kent
+                        </h2>
+                        <img src="..\..\Images\Artwork\15. Clark Kent (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            I didn't really appreciate this piece at the time but it really is the best I've done until
+                            that point. The tonal range is much more improved, and the hair well textured. The only
+                            nit-picks is the issue with texturing his shirt and the relative proportion on the eyes
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Lois Lane
+                        </h2>
+                        <img src="..\..\Images\Artwork\16. Lois Lane (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            If your detail isn't good enough, choose a frame that makes it obvious that one thing is a
+                            collar and the other the shoulder. Contour with a dark pencil and colour at the same time.
+                            Doing the latter first can end making it too powerful. I have no idea where to begin with
+                            highlights as big as the one in the reference:
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The Endless
+                        </h2>
+                        <img src="..\..\Images\Artwork\17. The Endless (Major).png" style="width:60%">
+                        <p style="text-align: center;">
+                            At the time I logged it (since it was my first non-photorealistic project and major project
+                            (all projects prior I rushed in under an hour; this was done in a week):
+                            So this is a stitched scan, so you may notice a line across the centre. Let's begin:
+
+                            - Death. So I went for realism, didn't realise that it's near impossible to create realism
+                            from scratch even for the best of artists so 0_o my disappointment was immense. The umbrella
+                            did light up my face. I kept her hands covered up to make it easier.
+
+                            - Dream: This should be eas- never mind. I'll come back later
+
+                            - Destiny: Not too troublesome. I looked up assassin creed fan art tutorials to learn how to
+                            make a hood. Though I made the mistake of putting the sigil at the light end as opposed to
+                            the dark end, which led to a domino effect of almost all of them being difficult to spot
+
+                            - Destruction: Easy enough to draw. Based the body off Smallville Clark Kent. The head looks
+                            awful with that beard outline; might have to come back to it
+
+                            - Dream (again): Head seems fine. I can use that meme hand drawing for it. Used the locus of
+                            the wrist and the shoulder to place the elbow. The hair seems tricky. I just winged it with
+                            spikes; seems decent enough. At this point it's clear that the black colouring pencil does
+                            not compare to a normal pencil
+
+                            - Despair: Pretty easy. I'm used to heads and the eye is the easiest bit. Though the realism
+                            of the tear of the eye in relation to the lack of realism in the face makes the tear easy to
+                            miss.
+
+                            - Desire: I couldn't think of a pose. Then I searched it up and pretty much ctrl C ctrl V
+                            the image it was that good. It could be considered cheating since I never used a direct ref
+                            for the others nor have I used artwork in itself as a direct ref at all but meh.
+
+                            - Destruction (again): I just braved the colouring since getting a usable face to begin with
+                            took hours. Turns out that the beard outline was quite deceptive and the end product was not
+                            that bad
+
+                            - Delirium: Hardest for last ig. The body wasn't too bad to make. The too big jacket was an
+                            artistic choice btw, but I really failed to show gravity's effect on the clothing (I tried
+                            making the jacket sort of fold but it doesn't seem natural). But it turned out alrightish
+                            for the colouring. Though I must say; leather is a pain to colour, especially black leather.
+
+
+                            Moving on: Definitely need to stop relying on blur to cover up screwups in detail, and I
+                            really need to get more saturation from my pencils, even if they're not that good.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Eye
+                        </h2>
+                        <img src="..\..\Images\Artwork\18. An Eye (Major).png" style="width:60%">
+                        <p style="text-align: center;">
+                            Mostly inspired from Jono Dry's eye. I was curious how much better I can draw if the detail
+                            is magnified. Interestingly quite a lot, but it makes skin 10 times harder to do
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Elaine Belloc
+                        </h2>
+                        <img src="..\..\Images\Artwork\19. Elaine Belloc Space Swag (Colour).jpg" style="width:60%">
+                        <p style="text-align: center;">
+                            Another non-reference non-realism art work for a competition online. I need to improve my
+                            knowledge on the human figure. My heart wasn't really in it so it was admittedly rushed </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Joker
+                        </h2>
+                        <img src="..\..\Images\Artwork\20. Phoenix Joker (Major).png" style="width:60%">
+                        <p style="text-align: center;">
+                            Right then. At face value it's decent; I was quite pleased with the waistcoat. I thought
+                            this frame would mean less need of skin tones (I only have one pencil per skin tone (orange
+                            and pink on top lightly helps but isn't as realistic). It did work, but the problem was that
+                            the reference was highly saturated; I couldn't quite reach the level of saturation required;
+                            you can see on the coat I pressed as hard as I could to reach a red. Though I do think I
+                            could have done more to adjust to low depth of colour.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Hermione Granger
+
+                        </h2>
+                        <img src="..\..\Images\Artwork\21. Herimione Granger (Major).png" style="width:30%">
+                        <p style="text-align: center;">
+                            Okay now I have a Faber Castell set of 24 as a gift. Now I need to utilise layers in order
+                            to create a better degree of realism. Skin tones have finally improved. The main issue is
+                            clothing; I need to make it more photorealistic
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The Joker
+
+                        </h2>
+                        <img src="..\..\Images\Artwork\22. Heath Ledger Joker (Major).png" style="width:30%">
+                        <p style="text-align: center;">
+                            A remake of my failed attempt from before. I decided to take the reference and make the hair
+                            greener on photoshop. I upped the contrast too. There aren't any glaring issues. By this
+                            point, I'm pretty satisfied with my art, but I want to see if it's possible to meet
+                            photorealistic standards and perhaps hyperrealism. The main issue with this piece is that it
+                            was too easy; the contrast really reduced detail meaning that it was mostly just a case of
+                            getting a good sketch done and colour by number. Side note; first time with zest-it; only
+                            works on thick paper (but I used it with the lips for this piece).
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Harley Quinn Joker Line-up
+
+
+                        </h2>
+                        <img src="..\..\Images\Artwork\23. Joker Lineup (Colour).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            A sort of cartoon I did for another online competition. Cartoon really isn't my style, but I
+                            still want to work on it :p
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Gaiman and Hadley
+
+                        </h2>
+                        <img src="..\..\Images\Artwork\24. Gaiman and Hadley (Major).png" style="width:30%">
+                        <p style="text-align: center;">
+                            So I swapped out the Joker for this in an art competition. I think that Gaiman (right) was
+                            well done (the hair felt natural and the shading really achieved that texture), though the
+                            space between the nose and the mouth needs to be better detailed; it looks too flat. Hadley
+                            (left) was harder to do as her reference was poorer and I had never added fake features on a
+                            photorealistic drawing before; the hair down the side of the nose (actually someone else in
+                            the reference), the eyeliner and the necklace, The shading was alright but the Drawing just
+                            looks too simplistic to see real.
+
+                            This is my first time using B-8B (I've always used HB) and this is probably the most
+                            educational piece I've made
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Wonder Woman
+
+
+                        </h2>
+                        <img src="..\..\Images\Artwork\25. Wonder Woman (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            First A4 piece here. I did the whole thing in HB.
+                            So I thought I'd touch it up with a 2B after then maybe bump up to 6 then 8...
+                            I did not do that.
+                            I did minor tweaks with a 2B before getting bored and going in straight with the 8B before
+                            going for mid-tones with 4, using the B to repronounce shape at a few places. Lazy, sloppy
+                            and scratchy, but it got the job done :)
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">John Constantine
+                        </h2>
+                        <img src="..\..\Images\Artwork\26. John Constantine (Major).png" style="width:30%">
+                        <p style="text-align: center;">
+                            I honestly wanted to cry when I saw how this came out; reminder to always use a mirror whilst
+                            working. The proportions are all wrong, but at least the skin tone is better. Maybe one day
+                            I will give this another go.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The 10th Doctor
+                        </h2>
+                        <img src="..\..\Images\Artwork\27. Tennant Doctor (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            This is a lot better. The proportions, are correct, and the textures are fairly decent. I just need to blend more and create
+                            stronger contrast (I know the gamma is off on this image but even then it still needs work).
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Sally Sparrow
+                        </h2>
+                        <img src="..\..\Images\Artwork\28. Sally Sparrow (Major).png" style="width:30%">
+                        <p style="text-align: center;">
+                            The colour is well rendered here, and the texture isn't half bad, but the proportion on the eyes need work. All the more reason
+                            I should start using a mirror more frequently. 
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Abed Nadir
+                        </h2>
+                        <img src="..\..\Images\Artwork\29. Abed Nadir (Major).png" style="width:30%">
+                        <p style="text-align: center;">
+                            I need to blend better, but I think I have the lighting down. I also need to improve texture on the clothing.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Beth Harmon
+                        </h2>
+                        <img src="..\..\Images\Artwork\31. Beth Harmon.png" style="width:30%">
+                        <p style="text-align: center;">
+                            This is interesting, because the lighting isn't as vividly red as it is in the picture; perhaps I got lucky. Either way I would love
+                            to try this out again.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Bloodsport
+                        </h2>
+                        <img src="..\..\Images\Artwork\34. Bloodsport (B&W).jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            I finally plucked up the courage to try darker skin tones; it honestly went better than I expected, and I think I will try more to make
+                            it easier (and better for practice) to render skin tones if I stick to darker skin tones, because I can get more lead on paper.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>reset()</script>
