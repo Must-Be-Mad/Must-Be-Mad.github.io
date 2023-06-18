@@ -254,7 +254,12 @@ h2.cyanpanel {
     border: 5px solid #0edacf;
     box-shadow: -0.2em 0.2em 1em 0.2em #d9ffff;
 }
-
+a .cyanpreviews:hover {
+    border: 5px solid #00a59d;
+}
+a .purplepreviews:hover {
+    border: 5px solid #4801a6;
+}
 .panelcontainer {
     padding: 3em;
     font-size: 14pt;
