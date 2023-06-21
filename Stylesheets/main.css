@@ -200,6 +200,7 @@ h2.purplepanel {
 
 .purplepreviews {
     width: 100%;
+    height:calc(100% - 20px);
     margin-bottom: 2em;
     padding: 1em;
     border-radius: 1em;
@@ -248,6 +249,7 @@ h2.cyanpanel {
 
 .cyanpreviews {
     width: 100%;
+    height:calc(100% - 20px);
     margin-bottom: 2em;
     padding: 1em;
     border-radius: 1em;
