@@ -161,6 +161,9 @@
   width:100%;
   transition: 0.5s;
 }
+p{
+  text-align: justify;
+}
 @media (max-width:1300px) {
   .imageparagraph{
     align-items: center;
@@ -259,5 +262,9 @@
 @media (max-width:650px){  
   .content-layout{
     grid-template-columns: repeat(1, 1fr);
+  }
+    iframe{
+      zoom:0.4;
+    }
 }
-}
+
