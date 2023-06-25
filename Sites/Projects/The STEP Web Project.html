@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Stylesheets/main.css">
+    <link rel="stylesheet" href="../../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../../Images/tabicon.png">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+            });
+        });
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
+        var items = document.getElementsByClassName("projectitem")
+        var position = 0
+        function reset() {
+            console.log("reset")
+            for (var i = 0; i < items.length; i++) {
+                if (i < position) {
+                    items[i].style.left = "-120%"
+                    items[i].style.position = "absolute"
+                }
+                else if (i == position) {
+                    items[i].style.left = "0"
+                    items[i].style.position = "relative"
+                }
+                else {
+                    items[i].style.left = "120%"
+                    items[i].style.position = "absolute"
+                }
+            }
+        }
+        function moveright() {
+            console.log(position)
+            if (position + 1 < items.length) {
+                position += 1
+                reset()
+            }
+        }
+        function moveleft() {
+            console.log(position)
+            if (position > 0) {
+                position -= 1
+                reset()
+            }
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <a href="../Home.html">
+        <div id="inpage" style="cursor: pointer;"></div>
+    </a>
+    <header class="navbar">
+        <button><a class="option" id="cyan" href="../Blog.html">Blogs</a></button>
+        <button><a class="option" id="blue" href="../Exams.html">Exams</a></button>
+        <button><a class="option" id="lime" href="../Jokes.html">Jokes</a></button>
+        <button><a class="option" id="purple" href="../Projects.html">Projects</a></button>
+        <button><a class="option" id="pink" href="../Contact.html">Contact</a></button>
+    </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em  #8f0aff;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon2">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon3">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon4">
+            <div class="bgpurple"></div>
+        </div>
+        <div style="margin-top:30px; margin-right:30px; left:auto; text-align: right; font-size: 1.2em;">
+            <a href="../Projects.html" style="cursor: pointer; text-decoration: none;color:black;">◄ Return to
+                Projects</a>
+        </div>
+        <div class="content" id="purple">
+            <div class="project-navigation">
+                <button id="purple" onclick="moveleft()"><b>&lt;</b></button>
+                <h1 class="project-title"> The STEP Web Project</h1>
+                <button id="purple" onclick="moveright()"><b>&gt;</b></button>
+            </div>
+            <div class="projectcarousel">
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">What's it about?</h2>
+                        <img src="..\..\Images\Project Images\STEP Web Project\Main Page.jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            A little bit of extra information about myself; I sat the STEP exam in 2022, aka the Sixth-Term Examination Paper.
+                            I didn't do too bad; I achieved a 1 in STEP 2, and a 2 in STEP 3. However, I realised that there are so many
+                            resources for STEP, and a lot of advice I wish I was given when I did the exam (i.e the cliche motivation for
+                            any tutor-esque website). As a result, I did the sane thing and took on html, css and a little bit of javascript
+                            to try and create a website, because web design is cool. Naturally, the site has a lot of typos I was too lazy to fix,
+                            and the overall design is shabby, but hey, it was my first site. You can find it <a target="_blank" href="https://yolo2546.github.io">here</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Where I started</h2>
+                        <img src="..\..\Images\Project Images\STEP Web Project\Learn Code Academy.png" style="width:30%">
+                        <p style="text-align: center;">
+                            When it comes to learning new skills, it's a really good idea to look for youtube playlists (from the same channel)
+                            rather than individual tutorials, because not only is there a lot more content than from a single video, but the
+                            tutorials have no overlap. The playlist I recommend is by <a href="https://www.youtube.com/playlist?list=PLoYCgNOIyGABDU532eesybur5HPBVfC1G"
+                            >LearnCode.Academy</a>. The tutorials are really concise yet also very detailed. The only thing it doesn't touch
+                            upon is javascript but for web design javascript is best reserved for specific requirements such as carousels and
+                            collapsibles.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The main picture</h2>
+                        <img src="..\..\Images\Project Images\STEP Web Project\Main Page.jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            In general, when you post something online you should be fairly careful to not post a picture that isn't yours,
+                            and even more in general, I have a sever lack of maths related photos. So, I decided to use my 3d printed models
+                            of 'cones' from a different project I did (I might post about it later on). These shapes were an edit of a cone.
+                            By graphing a cube symmetrically on the x-z plane, such that the slope of cube was vertical (and the 'apex' was
+                            at the origin), any cut in the y-z plane would form a parabola (because it's parallel to the slope). By generating
+                            the cone <i>from</i> the parabola, I was able to change it so that it formed a quartic, hyperbolic cosine and so
+                            on and so forth. The shapes aren't particularly useful, but they look nice as a desk item. The write-up of this
+                            project can be found <a target="_blank" href="..\..\Data\Cone Project.pdf">here</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Structure</h2>
+                        <img src="..\..\Images\Project Images\STEP Web Project\Structure.png" style="width:30%">
+                        <p style="text-align: center;">
+                            Overall, the site is poorly designed. The footer isn't really a footer in most of the pages, the header of the
+                            page jolts when the navbar is readjusted to the top of the page, and the aesthetic overall is bland, much like
+                            my personality. However, looking back, I do really like the design of the card, with the blue top and bottom
+                            borders. However, as I mentioned the site is poorly designed, and I made it with a hacksaw; that is I took
+                            long and complicated div patterns to get the result I wanted.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Collapsibles</h2>
+                        <img src="..\..\Images\Project Images\STEP Web Project\Structure.png" style="width:30%">
+                        <p style="text-align: center;">
+                            Perhaps the coolest thing I have with the site was the coding of the collabsibles. However, I myself
+                            cannot take credit for the design (although now I have built up enough javascript knowledge to do them
+                            myself), that credit is down to this youtube tutorial:
+                        </p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jXTfoKkPtYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Publishing</h2>
+                        <img src="..\..\Images\Project Images\STEP Web Project\Google.png" style="width:30%">
+                        <p style="text-align: center;">
+                            The site, much like this one, is saved on github pages, hence why it has a strange URL. However, you can still
+                            publish a website using Google's search console. I won't talk much about this, because I haven't quite got the
+                            hang of it, but you can easily learn how to by searching 'How to publish a github site using Google Search
+                            Console' or something along those lines. That aside, there isn't really much more to say on the site; feel free
+                            to share it with friends if they are taking STEP exams I guess.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: right;color: black;">
+                -25/06/23 
+            </div>
+        </div>
+    </div>
+</body>
+<script>reset()</script>

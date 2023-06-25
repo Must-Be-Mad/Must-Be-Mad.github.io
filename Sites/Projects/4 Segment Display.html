@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Stylesheets/main.css">
+    <link rel="stylesheet" href="../../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../../Images/tabicon.png">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+            });
+        });
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
+        var items = document.getElementsByClassName("projectitem")
+        var position = 0
+        function reset() {
+            console.log("reset")
+            for (var i = 0; i < items.length; i++) {
+                if (i < position) {
+                    items[i].style.left = "-120%"
+                    items[i].style.position = "absolute"
+                }
+                else if (i == position) {
+                    items[i].style.left = "0"
+                    items[i].style.position = "relative"
+                }
+                else {
+                    items[i].style.left = "120%"
+                    items[i].style.position = "absolute"
+                }
+            }
+        }
+        function moveright() {
+            console.log(position)
+            if (position + 1 < items.length) {
+                position += 1
+                reset()
+            }
+        }
+        function moveleft() {
+            console.log(position)
+            if (position > 0) {
+                position -= 1
+                reset()
+            }
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <a href="../Home.html">
+        <div id="inpage" style="cursor: pointer;"></div>
+    </a>
+    <header class="navbar">
+        <button><a class="option" id="cyan" href="../Blog.html">Blogs</a></button>
+        <button><a class="option" id="blue" href="../Exams.html">Exams</a></button>
+        <button><a class="option" id="lime" href="../Jokes.html">Jokes</a></button>
+        <button><a class="option" id="purple" href="../Projects.html">Projects</a></button>
+        <button><a class="option" id="pink" href="../Contact.html">Contact</a></button>
+    </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em  #8f0aff;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon2">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon3">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon4">
+            <div class="bgpurple"></div>
+        </div>
+        <div style="margin-top:30px; margin-right:30px; left:auto; text-align: right; font-size: 1.2em;">
+            <a href="../Projects.html" style="cursor: pointer; text-decoration: none;color:black;">◄ Return to
+                Projects</a>
+        </div>
+        <div class="content" id="purple">
+            <div class="project-navigation">
+                <button id="purple" onclick="moveleft()"><b>&lt;</b></button>
+                <h1 class="project-title"> 4 Segment Display</h1>
+                <button id="purple" onclick="moveright()"><b>&gt;</b></button>
+            </div>
+            <div class="projectcarousel">
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Why I made it</h2>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft.gif" style="width:30%">
+                        <p style="text-align: center;">
+                            I was browsing youtube for a time, as you do, when I got reccomended the below video. So naturally, I thought I could try my hand at making my own 4 segment display, because the one in the video kind of sucked.
+                            Afterwards, I shared my attempt on discord and my friend Sophie (Durham Maths) built on the design/revamped it. We continued
+                            to work on it and out came the above display you see (designed on Piskel).
+                        </p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RTB5XhjbgZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The First Draft</h2>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Draft 1.gif" style="width:30%">
+                        <p style="text-align: center;">
+                            This design is clearly flawed. In fact even I personally cannot say with absolute certainty which number is which.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Sophie's Improvements</h2>
+                        <p style="text-align: center;">
+                            Sophie, a friend from Durham, took my design, and as the Doctor would put it, "had it torn up, thrown in the air and snogged to
+                            death". She then proceeded to make it better starting with a shot-in-the-dark attempt at a draft below:
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Draft 2.jpg" style="width:30%">
+                        <p>
+                            The problem with this design, of course, was that 3,5,6 and 8 were all identical; i.e the same segments would be lit up for all
+                            of them. Instead, she changed the design completely by overlaying the numbers on top of each other to find a result:
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Draft 3.jpg" style="width:30%">
+                        <p>
+                            However this design too, was flawed, and for the same reason; 8 and 3 matched and 5 and 6 matched. The final design mixed both
+                            approaches, noting that the 0 doesn't have to be complete, and came out as below:
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Draft 4.png" style="width:30%">
+                        <p>
+                            This reduced the duplicates down to 1 pair, 2 and 3. And importantly it became the basis of the final version.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Final version</h2>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Draft 4.png" style="width:30%">
+                        <p style="text-align: center;">
+                            Above is Sophie's final version. From her version, I fixed the issue between 2 and 3 by creating a notch for the centre spoke of
+                            the number 3, omitting the need for the central line:
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Draft 5.jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            From there the design remained mostly unchanged when I digitalised it in Piskel:
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft.gif" style="width:30%">
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">One</h2>
+                        <p style="text-align: center;">
+                            This is fairly simple; not particularly a problem to realise this is a '1'.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\1.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Two</h2>
+                        <p style="text-align: center;">
+                            This is perhaps the least accurate of the digits, because the notch is meant to be percieved as disjoint from the central diagonal.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\2.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Three</h2>
+                        <p style="text-align: center;">
+                            Curiously, this works well, as it relies on, and was inspired by, <a href="https://en.wikipedia.org/wiki/Illusory_contours">illusory contours</a>.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\3.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Four</h2>
+                        <p style="text-align: center;">
+                            This looks good enough to be a 4; note that it doesn't have to look like a 4, but moreso a 4 than any other digit.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\4.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Five</h2>
+                        <p style="text-align: center;">
+                            The 5, much like the two, relied on the notch being ignored, and linked to the stroke on the left; however, this worked
+                            much better
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\5.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Six</h2>
+                        <p style="text-align: center;">
+                            The 6 requires that the notch be ignored too, however, it isn't as large a detrimant if it isn't.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\6.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Seven</h2>
+                        <p style="text-align: center;">
+                            As with the 1, the 7 doesn't need much explanation; it just works.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\7.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Eight</h2>
+                        <p style="text-align: center;">
+                            The eight works pretty well here; as you are more inclined to attach everything if there are no strokes unactive.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\8.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Nine</h2>
+                        <p style="text-align: center;">
+                            This is perhaps one of the most neat; likely as it doesn't involve the notch.
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\9.jpg" style="width:30%">
+                        </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Nine</h2>
+                        <p style="text-align: center;">
+                            Shy of the 2, 0 is hardest to imagine because it heavily relies on the illusory contouring. Even moreso because the missing
+                            part on the 0 on the top is a segment, but activating it causes conflict with the 5. 
+                        </p>
+                        <img src="..\..\Images\Project Images\4 Segment Display\Final Draft\0.jpg" style="width:30%">
+                        </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: right;color: black;">
+                -25/06/23 
+            </div>
+        </div>
+    </div>
+</body>
+<script>reset()</script>
