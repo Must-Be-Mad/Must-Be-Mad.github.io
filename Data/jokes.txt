@@ -1,3 +1,7 @@
+Why are computer-made zooms of the Mandelbrot Set poorly named?
+They should be called mandelbot zooms.
+oneliners
+
 What's the difference between aleph 1 and aleph 0?
 aleph 1
 oneliners
