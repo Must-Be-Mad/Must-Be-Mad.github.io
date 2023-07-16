@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Stylesheets/main.css">
+    <link rel="stylesheet" href="../../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../../Images/tabicon.png">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+            });
+        });
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
+        var items = document.getElementsByClassName("projectitem")
+        var position = 0
+        function reset() {
+            console.log("reset")
+            for (var i = 0; i < items.length; i++) {
+                if (i < position) {
+                    items[i].style.left = "-120%"
+                    items[i].style.position = "absolute"
+                }
+                else if (i == position) {
+                    items[i].style.left = "0"
+                    items[i].style.position = "relative"
+                }
+                else {
+                    items[i].style.left = "120%"
+                    items[i].style.position = "absolute"
+                }
+            }
+        }
+        function moveright() {
+            console.log(position)
+            if (position + 1 < items.length) {
+                position += 1
+                reset()
+            }
+        }
+        function moveleft() {
+            console.log(position)
+            if (position > 0) {
+                position -= 1
+                reset()
+            }
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <a href="../Home.html">
+        <div id="inpage" style="cursor: pointer;"></div>
+    </a>
+    <header class="navbar">
+        <button><a class="option" id="cyan" href="../Blog.html">Blogs</a></button>
+        <button><a class="option" id="blue" href="../Exams.html">Exams</a></button>
+        <button><a class="option" id="lime" href="../Jokes.html">Jokes</a></button>
+        <button><a class="option" id="purple" href="../Projects.html">Projects</a></button>
+        <button><a class="option" id="pink" href="../Contact.html">Contact</a></button>
+    </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em  #8f0aff;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon2">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon3">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon4">
+            <div class="bgpurple"></div>
+        </div>
+        <div style="margin-top:30px; margin-right:30px; left:auto; text-align: right; font-size: 1.2em;">
+            <a href="../Projects.html" style="cursor: pointer; text-decoration: none;color:black;">◄ Return to
+                Projects</a>
+        </div>
+        <div class="content" id="purple">
+            <div class="project-navigation">
+                <button id="purple" onclick="moveleft()"><b>&lt;</b></button>
+                <h1 class="project-title"> This Website</h1>
+                <button id="purple" onclick="moveright()"><b>&gt;</b></button>
+            </div>
+            <div class="projectcarousel">
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Why I made it?</h2>
+                        <img src="..\..\Images\Title Background.png" style="width:30%">
+                        <p style="text-align: center;">
+                            In my head, this site was in the works since 2020, after seeing the blog by Tim Urban, <a href="https://waitbutwhy.com/">Wait,
+                            But Why</a> which also inspired me to give it a 'quirky' name as opposed to "Daya's Blog". However,
+                            I only found out it was because that was the name of his comic strip, and wasnt named arbitrarily. So in a
+                            hilariousy ironic way, I do in fact have a uniquely named blog. Either way, here we are at.
+                            <br><br>
+                            When making this blog, I wanted to make sure I had no shortcuts; if something looked inefficient, I was going
+                            to fix it (though I have recently learned of react.js which seems perfect for this blog but I am very unmotivated
+                            to learn). The reason I made it was to keep <s>score</s> a record of all the stuff I do, as a form of portofolio
+                            for my skillset. In general, I am in full acknowledgement that this site will hardly recieve any, if any at all,
+                            traffic, but it's better to scream into a void than to be silent (despite almost all of my posts carrying less
+                            emotional baggage than this deep metaphor suggests [what can I say, I'm poetic]).
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The logo</h2>
+                        <img src="..\..\Images\tabicon.png" style="width:15%">
+                        <p style="text-align: center;">
+                            The logo was tricky, because I lack the talent to make a logo. Originally, it was going to be a drawing of stickmen around
+                            the text, much like Tim Urban's blog. However, in this case, it was going to be moreso in the style of <a href="https://xkcd.com/">xkcd</a>,
+                            with the title included to be drawn (perhaps with a little stickman chipping away at it with a pickaxe). Instead, I decided
+                            to go with the retro theme, as I wanted a colourful site overall a dark aesthetic, and neon fit the bill. As a result,
+                            I turned to Microsoft Word, and used the 'Harlow Solidd Italic' font. To get the design I wanted, I turned to the tutorial below and
+                            touched up the logo in photoshop: 
+                        </p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Aa-Mgsv3CFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The strings</h2>
+                        <img src="..\..\Images\Project Images\Must-Be-Mad\Strings.png" style="width:30%">
+                        <p style="text-align: center;">
+                            In general, I wanted something cool to happen with the front page of the site; I wanted some form of interactivity. The way I did
+                            this was through the neon strings that vibrated (if you're using mobile, or tablet they don't show) when you hover over the options
+                            of the navbar. There were many ways I could have approached this, but I decided to record the strings vibrating in a desmos simulation
+                            (kind thanks to whoever made them):<br><br>
+                            <iframe src="https://www.desmos.com/calculator/iyhufouote?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+                            <br><br>
+                            I tried to first use them as gifs (where I applied the transparency and colour adjustments) and then decided that webm video was
+                            simply easier, but due to the adjustments, I had to convert the gifs as opposed to using the source videos. This means
+                            that they are a tiny bit more choppy due to the compressed framerate. All I had to do was stack the video frames on top of each other
+                            and use a bit of javascript to have them play.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">AI</h2>
+                        <img src="..\..\Images\Project Images\Must-Be-Mad\ChatGPT.png" style="width:30%">
+                        <p style="text-align: center;">
+                            ChatGPT played a large role in this site. From a design standpoint, the site is all designed by me; unless
+                            I was missing a bit of knowledge, or needed grunt-work done, I coded the site myself; furthermore, to hone in
+                            the idea of this site's development being a learning experience, I, unless it was for testing purposes, never
+                            used any ChatGPT code I didn't understand. One thing it was very good at, was reapplying formatting to different
+                            divs in one section when adjusting another. E.G when changing the styling of the navbar options, I may have had to
+                            rearrange some details. I just fed in what was changed, and asked ChatGPT to extrapolate the same changes for the
+                            other colours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: right;color: black;">
+                -25/06/23 
+            </div>
+        </div>
+    </div>
+</body>
+<script>reset()</script>
