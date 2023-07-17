@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Stylesheets/main.css">
+    <link rel="stylesheet" href="../../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../../Images/tabicon.png">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+            });
+        });
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
+        var items = document.getElementsByClassName("projectitem")
+        var position = 0
+        function reset() {
+            console.log("reset")
+            for (var i = 0; i < items.length; i++) {
+                if (i < position) {
+                    items[i].style.left = "-120%"
+                    items[i].style.position = "absolute"
+                }
+                else if (i == position) {
+                    items[i].style.left = "0"
+                    items[i].style.position = "relative"
+                }
+                else {
+                    items[i].style.left = "120%"
+                    items[i].style.position = "absolute"
+                }
+            }
+        }
+        function moveright() {
+            console.log(position)
+            if (position + 1 < items.length) {
+                position += 1
+                reset()
+            }
+        }
+        function moveleft() {
+            console.log(position)
+            if (position > 0) {
+                position -= 1
+                reset()
+            }
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <a href="../Home.html">
+        <div id="inpage" style="cursor: pointer;"></div>
+    </a>
+    <header class="navbar">
+        <button><a class="option" id="cyan" href="../Blog.html">Blogs</a></button>
+        <button><a class="option" id="blue" href="../Exams.html">Exams</a></button>
+        <button><a class="option" id="lime" href="../Jokes.html">Jokes</a></button>
+        <button><a class="option" id="purple" href="../Projects.html">Projects</a></button>
+        <button><a class="option" id="pink" href="../Contact.html">Contact</a></button>
+    </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em  #8f0aff;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon2">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon3">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon4">
+            <div class="bgpurple"></div>
+        </div>
+        <div style="margin-top:30px; margin-right:30px; left:auto; text-align: right; font-size: 1.2em;">
+            <a href="../Projects.html" style="cursor: pointer; text-decoration: none;color:black;">◄ Return to
+                Projects</a>
+        </div>
+        <div class="content" id="purple">
+            <div class="project-navigation">
+                <button id="purple" onclick="moveleft()"><b>&lt;</b></button>
+                <h1 class="project-title">Launching a High Altitude Balloon</h1>
+                <button id="purple" onclick="moveright()"><b>&gt;</b></button>
+            </div>
+            <div class="projectcarousel">
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">What's it about?</h2>
+                        <img src="..\..\Images\Project Images\HAB\Earth.jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            My friends, Richard and Nihar, and myself wanted to try and record the path of a High Altitude
+                            Balloon (HAB) as it ascended into space. Considering myself exceptionally unfit, it's as close
+                            as I can get to space (rotten luck). Starting from Bigglsewade (South of, and between, Cambridge
+                            and Bedford), the balloon travelled all the way to a point between Bury St Edmund's and Ipswich.
+                            All of this was done with a budge of £500, including travel costs, and equipment cost; all of this
+                            was provided by the <a href="https://www.markevisonfoundation.org/">Mark Evison Foundation</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The Reward</h2>
+                        <img src="..\..\Images\Project Images\HAB\Evison.png" style="width:30%">
+                        <p style="text-align: center;">
+                            The Mark Evison Award is an award given to students aged 16-18 to complete a task independent of
+                            adults (although technically we had to use my parents to drive us). The award doesn't require much
+                            of a background to achieve (not to diminish it's prestige). Instead, in order to recieve the grant
+                            (up to £500), you must, in a away, do half of the project. That is, demonstrate that you know what
+                            you will spend the money on, how to organise your time, and that you have the relevant expertise
+                            to carry the project out. The other point is that the project needs to be hard; not a huge undertaking,
+                            though some have gone as far as climbing Everest, but difficult enough to be a challenge.
+                        </p>
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The Project</h2>
+                        <img src="..\..\Images\Project Images\HAB\Route.jpg" style="width:30%">
+                        <p style="text-align: center;">
+                            After buying the resources from <a href="http://www.randomengineering.co.uk/Random_Aerospace/Balloons.html">RandomEngineering</a>,
+                            3d printing our fittings, applying for permission from the Civil Aviation Authority, and renting
+                            out the helium (which we transported in a suitcase), we decided to launch the balloon on the 20th
+                            of August 2021. We took the train to Bigglsewade and set up; I'll save you the details. Needless
+                            to say the balloon inflated without a hitch, and we released it. My parents then arrived, and then
+                            using GPS, we tracked it for 6-8 hours. It landed in a field, where we went to retrieve it. All 
+                            of it was intact. You can view the footage here:
+                        </p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/XDyn3EnapPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p style="text-align: center;">
+                            Space officially starts 100km up, which, as space travel goes, is a pretty good choice. Not that it's
+                            the intention, but since most aircrafts (blimps included) cannot go beyond 30km due to the drop in air
+                            density, you draw a line between crafts that can go through a vacuum, and those that depend on air. Of
+                            course, our balloon depended on air (helium is lighter... etc etc). So whilst a measily 35km may seem
+                            a poor height, considering over 99% of the atmosphere's mass was below it, I'd consider it to be nearer
+                            the edge of space than you may think.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: right;color: black;">
+                -17/07/23 
+            </div>
+        </div>
+    </div>
+</body>
+<script>reset()</script>
