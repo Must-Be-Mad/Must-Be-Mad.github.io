@@ -29,7 +29,7 @@ OneSignal.push(function() {
         var targetDate = new Date("4/24/2022");
         var timeDiff = currentDate.getTime() - targetDate.getTime();
         var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        var weekdaysDiff = Math.floor(daysDiff / 7) * 5 + (daysDiff % 7) * (1 - Math.floor((daysDiff % 7) / 5)) + 5 * Math.floor((daysDiff % 7) / 5);
+        var weekdaysDiff = Math.floor(daysDiff / 7) * 5 + (daysDiff % 7) * (1 - Math.floor((daysDiff % 7) / 5)) + 5 * Math.floor((daysDiff % 7) / 5)-1;
         window.onload = function () {
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
