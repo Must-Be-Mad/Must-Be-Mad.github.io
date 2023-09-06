@@ -1,3 +1,7 @@
+Why is the multiplicative inverse deceptive?
+It gets one over the integers
+oneliners
+
 I was raging at this surface integral once.
 I was stoked when I realised the integrand was a curl of a function.
 oneliners
