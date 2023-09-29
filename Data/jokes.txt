@@ -1,3 +1,11 @@
+There are two factors to consider when making up a prime:
+1. And the prime itself.
+oneliners
+
+What do you call an exhibition about the number 1?
+Exp0
+oneliners
+
 I wanted to better understand matrices algebraically from my textbook. So I turned to the index.
 onliners
 
