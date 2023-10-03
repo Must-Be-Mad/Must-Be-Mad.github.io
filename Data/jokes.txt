@@ -1,3 +1,10 @@
+I was playing a game of word association with my friend.
+We were so bad at it we ended up in a loop.
+oneliners
+
+How do you best hide an ordered sequence of numbers?
+You use a vecTor.
+
 There are two factors to consider when making up a prime:
 1. And the prime itself.
 oneliners
