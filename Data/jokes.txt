@@ -20,6 +20,7 @@ oneliners
 
 How do you best hide an ordered sequence of numbers?
 You use a vecTor.
+oneliners
 
 There are two factors to consider when making up a prime:
 1. And the prime itself.
