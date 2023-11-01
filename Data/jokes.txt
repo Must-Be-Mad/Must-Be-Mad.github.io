@@ -1,3 +1,7 @@
+I was looking for evidence that all eigenvalues of a given matrix were positive.
+However there was no trace.
+oneliners
+
 Camille Jordan decided he needed open spaces.
 After defining the boundary around his house, he decided the interior of his home was open enough.
 oneliners
