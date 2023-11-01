@@ -1,3 +1,7 @@
+How do algebraists indicate they want a divorce?
+They add a multiplicative inverse to their ring
+oneliners
+
 I was looking for evidence that all eigenvalues of a given matrix were positive.
 However there was no trace.
 oneliners
