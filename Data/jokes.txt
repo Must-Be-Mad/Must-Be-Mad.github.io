@@ -1,3 +1,7 @@
+I was struggling to get • to distribute over ~ for this ring I'm designing.
+The just wouldn't co-operate.
+oneliners
+
 I was trying to count how many naturals there were.
 I had to push myself to the limit.
 oneliners.
