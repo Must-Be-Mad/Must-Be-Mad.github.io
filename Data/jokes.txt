@@ -1,3 +1,7 @@
+I was trying to figure out how many ways a gene can change after mutating bases.
+It increases by an incrementing factor per mutation. 
+oneliners
+
 I think we could be an inner product.
 Because everything about us is positive, for definite.
 pickuplines
