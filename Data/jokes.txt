@@ -1,3 +1,7 @@
+I once made a matrix with two C's rather than normal brackets.
+The items were positioned as "in the C's"
+oneliners
+
 I was trying to figure out how many ways a gene can change after mutating bases.
 It increases by an incrementing factor per mutation. 
 oneliners
