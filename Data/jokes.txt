@@ -1,3 +1,7 @@
+My homework required me to prove a space was compact.
+After only a finite number of steps I had it covered.
+oneliners
+
 I wanted to distance myself from algebra
 Which is why I studied analysis of metric spaces
 oneliners
