@@ -1,3 +1,7 @@
+I was trying to relieve the pressure during a numerical methods exam.
+I reminded myself I had nothing to prove
+oneliners
+
 How do you best approximate pi?
 By aπing yourself
 oneliners
