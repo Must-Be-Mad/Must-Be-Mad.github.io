@@ -6,7 +6,7 @@ What do you call a guy who is killed by long division?
 Davidend
 oneliners
 
-I have been trying to prove modus pollens.
+I have been trying to prove modus ponens.
 However if I have a proof, I have circular reasoning
 oneliners
 
