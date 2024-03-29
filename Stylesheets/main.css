@@ -157,6 +157,14 @@ h2.limepanel {
     outline: 5px solid #0fdf69;
     box-shadow: -0.2em 0.2em 1em 0.2em #e6ffd1;
 }
+.silverpreviews {
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: 1em;
+    outline: 5px solid #a7a7a7;
+    box-shadow: -0.2em 0.2em 1em 0.2em #e6ffd1;
+}
 
 
 h1.bluepanel {
