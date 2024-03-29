@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../Stylesheets/minor.css">
     <title>I Must be Mad</title>
     <link rel="icon" href="../Images/tabicon.png">
-     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
     <script>
         window.OneSignal = window.OneSignal || [];
         OneSignal.push(function () {
@@ -40,7 +40,7 @@ OneSignal.push(function() {
             var targetDate = new Date("4/24/2022");
             var timeDiff = currentDate.getTime() - targetDate.getTime();
             var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        var weekdaysDiff = Math.floor(daysDiff / 7) * 5 + (daysDiff % 7) - Math.floor((daysDiff % 7)/5);
+            var weekdaysDiff = Math.floor(daysDiff/7)*5 +(daysDiff % 7)*(1-Math.floor((daysDiff % 7)/5))+5*Math.floor((daysDiff % 7)/5)-1;
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
                 var lines = this.responseText
@@ -51,7 +51,14 @@ OneSignal.push(function() {
                     list.push([lines[i], lines[i + 1], lines[i+2]])
                 }
                 for (let i = Math.max(0, list.length-weekdaysDiff); i < list.length; i++) {
-                    let joke = "<div class='limepreviews " + list[i][2] + "' onClick=\"dropdown('Joke" + String(i) + "')\"><div>" + list[i][0] + "</div><div id='" + 'Joke' + String(i) + "' style='max-height: 0px; overflow: hidden; transition:0.1s ;'><hr style='color:rgb(233, 233, 233)'>" + list[i][1] + "</div></div>";
+                    let joke;
+                    if (list[i][2].charAt(0) === 'G') {
+                        list[i][2] = list[i][2].substring(1);
+                        joke = "<div class='silverpreviews " + list[i][2] + "' onClick=\"dropdown('Joke" + String(i) + "')\"><div>" + list[i][0] + "</div><div id='" + 'Joke' + String(i) + "' style='max-height: 0px; overflow: hidden; transition:0.1s ;'><hr style='color:rgb(233, 233, 233)'>" + list[i][1] + "</div></div>";
+                    }
+                    else{ 
+                    joke = "<div class='limepreviews " + list[i][2] + "' onClick=\"dropdown('Joke" + String(i) + "')\"><div>" + list[i][0] + "</div><div id='" + 'Joke' + String(i) + "' style='max-height: 0px; overflow: hidden; transition:0.1s ;'><hr style='color:rgb(233, 233, 233)'>" + list[i][1] + "</div></div>";
+                    }
                     document.getElementById("jokes").innerHTML += joke;
                 }
             }
@@ -102,7 +109,8 @@ OneSignal.push(function() {
                 hopefully be bringing new ones in regularly. Click on the jokes to see the punchline.<br><br>
                 <span style="color: rgb(255, 0, 212);">&#9632;</span>: Pick-Up Lines<br>
                 <span style="color: rgb(255, 0, 0);">&#9632;</span>: Roasts<br>
-                <span style="color: rgb(0, 0, 0);">&#9632;</span>: Break-up lines
+                <span style="color: rgb(0, 0, 0);">&#9632;</span>: Break-up lines<br>
+                <span style="color: #a7a7a7;">&#9632;</span>: 500th Joke!
             </div>
             <div id="jokes" class="content-layout">
 
