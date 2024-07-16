@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Stylesheets/main.css">
+    <link rel="stylesheet" href="../../Stylesheets/minor.css">
+    <title>I Must be Mad</title>
+    <link rel="icon" href="../../Images/tabicon.png">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "320ab039-0384-43c1-b7d9-97389cedc778",
+            });
+        });
+        function subscribeToNotifications() {
+            OneSignal.push(function () {
+                OneSignal.registerForPushNotifications();
+            });
+        }
+        var items = document.getElementsByClassName("projectitem")
+        var position = 0
+        function reset() {
+            console.log("reset")
+            for (var i = 0; i < items.length; i++) {
+                if (i < position) {
+                    items[i].style.left = "-120%"
+                    items[i].style.position = "absolute"
+                }
+                else if (i == position) {
+                    items[i].style.left = "0"
+                    items[i].style.position = "relative"
+                }
+                else {
+                    items[i].style.left = "120%"
+                    items[i].style.position = "absolute"
+                }
+            }
+        }
+        function moveright() {
+            console.log(position)
+            if (position + 1 < items.length) {
+                position += 1
+                reset()
+            }
+        }
+        function moveleft() {
+            console.log(position)
+            if (position > 0) {
+                position -= 1
+                reset()
+            }
+        }
+    </script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <a href="../Home.html">
+        <div id="inpage" style="cursor: pointer;"></div>
+    </a>
+    <header class="navbar">
+        <button><a class="option" id="cyan" href="../Blog.html">Blogs</a></button>
+        <button><a class="option" id="blue" href="../Exams.html">Exams</a></button>
+        <button><a class="option" id="lime" href="../Jokes.html">Jokes</a></button>
+        <button><a class="option" id="purple" href="../Projects.html">Projects</a></button>
+        <button><a class="option" id="pink" href="../Contact.html">Contact</a></button>
+    </header>
+    <div class="content-container" style="box-shadow: 0 0 0.8em  #8f0aff;">
+        <div class="ribbon-container" id="ribbon1">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon2">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon3">
+            <div class="bgpurple"></div>
+        </div>
+
+        <div class="ribbon-container" id="ribbon4">
+            <div class="bgpurple"></div>
+        </div>
+        <div style="margin-top:30px; margin-right:30px; left:auto; text-align: right; font-size: 1.2em;">
+            <a href="../Projects.html" style="cursor: pointer; text-decoration: none;color:black;">◄ Return to
+                Projects</a>
+        </div>
+        <div class="content" id="purple">
+            <div class="project-navigation">
+                <button id="purple" onclick="moveleft()"><b>&lt;</b></button>
+                <h1 class="project-title">UCL Portofolio</h1>
+                <button id="purple" onclick="moveright()"><b>&gt;</b></button>
+            </div>
+            <div class="projectcarousel">
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">Why I am making this</h2>
+                        <p style="text-align: center;">
+                            In general, I think that it would be useful to have a record of contributions to the community for UCL mathematics (I am still at UCL but don't expect to do much else in my third year). This isn't really intended to 'show off' but instead just to have a record <i>exist</i> (hence why I have no incentive to actively advertise this). Most of the work here was done in my second year through the ADM society, but I was never a formal part of the committee until then; I was vice president.
+                        </p>
+                        <img src="..\..\Images\Project Images\UCL Portofolio\Societies Fair.jpg" style="width:30%">
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The Department-Student Bulletin</h2>
+                        <p style="text-align: center;">
+                            Following a bulletin model from my time at sixth-form, I set up a weekly bulletin in my first year to collate any and all society, department and external notices in a single place. This is because a lot of staff members had emails that they were unable to easily share, and because student emails became heavily cluttered with individual opportunities. The initial numbers were incredibly large, having attained over 250 views for the first bulletin, and it eventually settled down to around 50-100 views per post. It wasn't the easiest thing to make, as it took up a lot of time and effort to get information from people. One of my favourite items on the bulletin was a department thanks, where student or staff can thank each other for anything in particular, and the question + meme of the week.
+                        </p>
+                        <img src="..\..\Images\Project Images\UCL Portofolio\Bulletin.png" style="width:30%">
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center;">
+                        <h2 style="text-align: center;" class="purplepanel">ADM Events</h2>
+                        <p style="text-align: center;">
+                            The Augustus De Morgan (ADM) Society is UCL's mathematics society. In general, there have been a lot of ADM events, and with limited exceptions, I owe a lot to the rest of committee for room bookings and Instagram posts. I independently (as a member of ADM but not a committee member) hosted a chess competition in my first year, booking through the department before second year, where I made an active effort to make more but as an elected vice president. Below is a list of the ADM events that I had hosted:
+                            <ul style="list-style-position: inside;">
+                                <li>Board Games Social (11/10/23)</li>
+                                <li>Headsolving Competition (27/10/2023)</li>
+                                <li>ADM Integration Bee (23/11/2023)</li>
+                                <li>The ADM Christmas Quiz (08/12/2023)</li>
+                                <li>A Second Board Games Social (14/01/2024)</li>
+                                <li>The Countdown Competition (23/01/2024)</li>
+                                <li>Another ADM pub Quiz (01/03/2024)</li>
+                                <li>ADM Python Coding Competition (05/03/2024)</li>
+                                <li>ADM-Institute Pub Quiz (13/03/2024) [I contributed a pub quiz section]</li>
+                                <li>Chess Competition (19/03/2024)</li>
+                            </ul>
+                            The competitions involved also had custom materials designed by myself. Furthermore, I hosted 4 talks from various lecturers across UCL to talk about their subject area's overlap with mathematics:
+                            <ul style="list-style-position: inside;">
+                                <li>Philosphy - Professor Tim Button (21/02/2024)</li>
+                                <li>Biology - Professor Robert Insall (28/02/2024)</li>
+                                <li>Advanced Spatial Analysis - Professor Elsa Arcaute (12/03/2024)</li>
+                                <li>Chemistry - Professor Graham Worth (20/03/2024)</li>
+                            </ul>
+                            In total, this accounted for around 50% of all events that occurred that year. As of writing, all events can be accessed on the ADM website.
+                        </p>
+                        <img src="..\..\Images\Project Images\UCL Portofolio\Societies Fair.jpg" style="width:30%">
+                    </div>
+                </div>
+                <div class="projectitem" style="color:black;">
+                    <div style="width:100%; text-align: center; align-items: center;">
+                        <h2 style="text-align: center;" class="purplepanel">The ADM Website</h2>
+                        <p style="text-align: center;">
+                            Over the Summer between first and second year and for a couple weeks in the first term of the latter, I developed the ADM website. This site both shared and archived images, as well as advertised ADM sponsors and events. One part of the page was an index of external modules student have successfully taken, and a gallery of photos taken at different events.
+                        </p>
+                        <img src="..\..\Images\Project Images\UCL Portofolio\ADM Site.png" style="width:30%">
+                        </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: right;color: black;">
+                -25/06/23 
+            </div>
+        </div>
+    </div>
+</body>
+<script>reset()</script>
