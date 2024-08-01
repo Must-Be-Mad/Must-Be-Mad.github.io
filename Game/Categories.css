@@ -1,0 +1,183 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #c2c9ff;
+}
+
+header {
+    font-size: 6vh; /* Responsive font size */
+    text-align: center;
+    padding:1vh;
+    border-bottom: 2px solid #000; /* Responsive border */
+    width: 100%;
+    font-weight: 600;
+}
+#Attempts{
+    background-color: grey;
+    height: 5vh; /* Responsive height */
+    text-wrap: wrap;
+    margin-bottom: 2%;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5vh; /* Responsive font size */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+#Clue {
+    background-color: grey;
+    left:0;
+    height: 5vh; /* Responsive height */
+    text-wrap: wrap;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5vh; /* Responsive font size */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+#List {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#row {
+    margin: 0.5vh 0; /* Responsive margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter {
+    font-size: 3vh; /* Responsive font size */
+    height: 6vh; /* Responsive height */
+    width: 6vh; /* Responsive width */
+    text-align: center;
+    margin: 0 1vh; /* Responsive margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000; /* Responsive border */
+    border-radius: 5px; /* Responsive border radius */
+    background-color: #f2deff;
+    font-weight: 550;
+}
+
+#Keyboard {
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0vh 0;
+    position: relative; /* Default position */
+}
+
+.krow {
+    display: flex;
+    justify-content: center;
+    margin: 0 0; /* Responsive margin */
+}
+.colour0{
+    background-color: rgb(211, 255, 213);
+    transition: background-color 2s ease;
+}
+.colour1{
+    background-color: rgb(216, 239, 255);
+    transition: background-color 2s ease;
+}
+.colour2{
+    background-color: rgb(255, 210, 244);
+    transition: background-color 2s ease;
+}
+.colour3{
+    background-color: rgb(255, 253, 219);
+    transition: background-color 2s ease;
+}
+.key {
+    width: 6vh; /* Responsive width */
+    height: 6vh; /* Responsive height */
+    margin: 0.5vh; /* Responsive margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    background-color: #4d5684;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px; /* Responsive border radius */
+    font-size: 2.5vh; /* Responsive font size */
+}
+
+.special-key {
+    width: 12vh; /* Responsive width */
+}
+
+@media screen and (max-width: 768px) {
+    .letter {
+        font-size: 2.5vh;
+        height: 8vh;
+        width: 8vh;
+        margin: 0 0.8vh;
+    }
+
+    .key {
+        height: 4vh;
+        font-size: 2.2vh;
+    }
+
+    .special-key {
+        width: 8vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .letter {
+        font-size: 40px;
+        height: 60px;
+        width: 60px;
+        margin: 0 8px;
+    }
+
+    .key {
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+    }
+    #row{
+        margin: 2vh;
+    }
+    .krow {
+        width: 100vw;
+    }
+
+    .special-key {
+        width: 200%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #Keyboard {
+        position: fixed;
+        width:100%;
+        bottom: 0;
+        left: 0;
+    }
+    #Clue {
+        width: 100%; /* Full width on mobile */
+        margin: 0;
+    }
+}
