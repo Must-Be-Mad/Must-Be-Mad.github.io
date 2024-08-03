@@ -1,0 +1,428 @@
+html {
+    touch-action: manipulation;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #12152e;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+header {
+    font-size: 5vh; /* Responsive font size */
+    text-align: center;
+    padding:1% 0;
+    border-bottom: 2px solid #000000; /* Responsive border */
+    width: 100%;
+    font-weight: 600;
+    height:10%;
+    display: flex;
+    flex-direction: row;
+}
+#Logo{
+    background-image: url("Logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+}
+#Blog{
+    width:100%;
+}
+
+#Help {
+    font-size: 4vh; /* Responsive font size */
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    color: #ffffff;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+}
+
+#information {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100vw;
+    background-color: #272c58;
+    border-top: 4px solid #7c84c3; /* Top border color */
+    transition: bottom 0.3s ease;
+    padding: 20px 25% ;
+    z-index: 1;
+    color:white;
+    min-height: 50%;
+    scale:0;
+}
+
+#information h1, #information h2  {
+    width: 100%;
+}
+
+#information p {
+    width: 50%;
+    word-wrap: break-word;
+    white-space: normal;
+}
+#results {
+    display: block;
+    position: absolute;
+    left: 25%;
+    right: 25vw;
+    height: 50%;
+    top: 25%;
+    width:50vw;
+    background-color: #272c58;
+    border: 2px solid #7c84c3; /* Border color */
+    border-radius: 1vw;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+}
+#results span{
+    width: 50%;
+    margin: 0 25%;
+}
+#results span p{
+    width: 50%;
+    margin: 0 25%;
+    color: white;
+    font-size: 4vh;
+}
+#results p{
+    width: 50%;
+    margin: 0 25%;
+    color: white;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    font-size: 3vh;
+    justify-content: center;
+}
+#results h1{
+    width: 50%;
+    margin: 10px 25%;
+    font-size: 6vh;
+}
+#results h2{
+    width: 50%;
+    margin: 10px 25%;
+    font-size: 5vh;
+}
+#shareButton{
+    all: unset;
+ width: 50%;
+ margin-top: 2vh;
+ border: 2pt solid white;
+ border-radius: 5pt;
+ font-size: 6vh;
+ text-align: center;
+ cursor: pointer;
+}
+#results.show {
+    opacity: 1;
+    transition: opacity 1s ease;
+    pointer-events: auto;
+}
+#closeButton {
+    position: relative;
+    top: 10px;
+    right: 2%;
+    left:48%;
+    background: none;
+    border: none;
+    font-size: 4vh;
+    cursor: pointer;
+    color: white;
+}
+#Blog a{
+    width:100%;
+    height:100%;
+    border-radius: 20%;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+}
+#Blog a img{
+    width:auto;
+    height:100%;
+    border-radius: 20%;
+    border: 2px solid #ffffff;
+    max-width: 8vh;
+    max-height: 8vh;
+}
+
+#Attempts{
+    height: 5vh; /* Responsive height */
+    text-wrap: wrap;
+    margin-top: 2%;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 3vh; /* Responsive font size */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+#Clue {
+    background-color: #262b51;
+    left:0;
+    height: 5vh; /* Responsive height */
+    text-wrap: wrap;
+    width: 100%;
+    max-width: 1024px;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-size: 2.5vh; /* Responsive font size */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+#List {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-height: 50%;
+}
+
+#row {
+    margin: 1vh 0; /* Responsive margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter {
+    font-size: 3vh; /* Responsive font size */
+    height: 6vh; /* Responsive height */
+    width: 6vh; /* Responsive width */
+    max-width:60px;
+    max-height:60px; 
+    text-align: center;
+    margin: 0 1vh; /* Responsive margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px; /* Responsive border radius */
+    background-color: #000622;
+    font-weight: 550;
+    transition: background-color 0.2s ease;
+}
+
+#Keyboard {
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0vh 0;
+    position: relative; /* Default position */
+}
+
+.krow {
+    display: flex;
+    justify-content: center;
+    margin: 0 0; /* Responsive margin */
+}
+.white{
+    background-color: rgb(255, 255, 255);
+    transition: background-color 0.2s ease;
+    animation: pop 0.2s ease;
+}
+.colour0{
+    background-color: rgb(255, 255, 172);
+    transition: background-color 1s ease;
+}
+.colour1{
+    background-color: rgb(204, 254, 166);
+    transition: background-color 1s ease;
+}
+.colour2{
+    background-color: rgb(182, 244, 255);
+    transition: background-color 1s ease;
+}
+.colour3{
+    background-color: rgb(255, 189, 242);
+    transition: background-color 1s ease;
+}
+.key {
+    width: 6vh; /* Responsive width */
+    height: 6vh; /* Responsive height */
+    margin: 0.5vh; /* Responsive margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    background-color: #262b51;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px; /* Responsive border radius */
+    font-size: 2.5vh; /* Responsive font size */
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer and Edge */
+}
+
+.special-key {
+    width: 12vh; /* Responsive width */
+}
+@keyframes pop {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+@media screen and (max-width: 768px) {
+    .letter {
+        font-size: 2.5vh;
+        height: 8vh;
+        width: 8vh;
+        margin: 0 0.8vh;
+    }
+    .key {
+        height: 4vh;
+        font-size: 2.2vh;
+    }
+
+    .special-key {
+        width: 8vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #results {
+        justify-content: center;
+        display: block;
+        position: absolute;
+        left: 10%;
+        right: 10vw;
+        height: 50%;
+        top: 25%;
+        width:80vw;
+        background-color: #272c58;
+        border: 2px solid #7c84c3; /* Border color */
+        border-radius: 1vw;
+        color: white;
+        opacity: 0;
+        transition: opacity 1s ease;
+        pointer-events: none;
+    }
+    #results span{
+        width: 50%;
+        margin: 0 25%;
+    }
+    #results span p{
+        width: 50%;
+        margin: 0 25%;
+        color: white;
+        font-size: 4vh;
+    }
+    #results p{
+        width: 50%;
+        color: white;
+        font-size: 3vh;
+        text-align: center;
+    }
+    #results h1{
+        text-align: center;
+        width: 50%;
+        margin: 10px 25%;
+        font-size: 3vh;
+    }
+    #results h2{
+        width: 50%;
+        margin: 10px 25%;
+        font-size: 3vh;
+    }
+    #shareButton{
+     width: 50%;
+     margin-top: 2vh;
+     border: 2pt solid white;
+     border-radius: 2pt;
+     font-size: 3vh;
+    }
+    .letter {
+        font-size: 40px;
+        height: 100px;
+        width: 100px;
+        margin: 0 8px;
+        max-width:100px;
+        max-height:100px; 
+    }
+    #information{
+        padding: 20px 5% ;
+        font-size: 2vh;
+    }
+    #information h1, #information h2  {
+        width: 100%;
+    }
+    
+    #information p {
+        width: 90%;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    #closeButton {
+        position: relative;
+        top: 10px;
+        right: 2%;
+        left:83%;
+        background: none;
+        border: none;
+        font-size: 4vh;
+        cursor: pointer;
+        color: white;
+    }
+    .key {
+        width: 100%;
+        height: 100px;
+        font-size: 60px;
+    }
+    #row{
+        margin-top: 2vh;
+    }
+    .krow {
+        width: 100vw;
+    }
+
+    .special-key {
+        width: 200%;
+        font-size:40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #Keyboard {
+        position:absolute;
+        width:100%;
+        bottom: 0;
+        left: 0;
+    }
+    #Clue {
+        width: 100%; /* Full width on mobile */
+        margin: 0;
+    }
+
+}

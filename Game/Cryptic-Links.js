@@ -1,5 +1,21 @@
-const words = ["MOVIE", "ACTION", "STRIKE", "WORKERS"];
-const clues = ["Transporting a letter.", "To play a charge.", "A holy man of a German Rule.", "We used to be dogs."];
+const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
+["FLOWER", "ROSE", "WHITE", "EGG"],
+["BUTTON", "SHIRT", "FORMAL", "PARTY"],
+["FUNNY", "COMIC", "BATMAN", "ROBIN"],
+["CHARIOT", "SOLDIER", "CANON", "ARSENAL"]
+]
+const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
+["The ooze of the mistake", "ρρρ", "An attack between us", "Breaking a leg is an L"],
+  ["The rear is really heavy", "Pain within a holy man", "To create everything", "Golf average with a golf stand"],
+  ["A joyous joint", "Repulsion at a domain", "Money machine in an embargo", "As opposed to give out"],
+  ["Burning violent protestors", "Being even more purchased", "Tin above", "To burn everything"]
+
+]
+const day =  Math.floor((new Date() - new Date('2024-08-03')) / (1000 * 60 * 60 * 24));
+console.log(day)
+
+const words = wordlist[day];
+const clues = cluelist[day];
 const keys = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
@@ -8,10 +24,11 @@ const keys = [
         var rowC = 0;
         var letC = 0;
         var errors= 0;
-        var attempts=0;
+        var attempts=[0,0,0,0];
         window.onload = function() {
             createKeyboard();
             start();
+            share();
         }
 
         function start() {
@@ -24,7 +41,7 @@ const keys = [
                     let letter = document.createElement("span");
                     letter.id = r.toString() + "-" + c.toString();
                     letter.classList.add("letter");
-                    letter.innerText = "⌴";
+                    letter.innerText = "";
                     row.appendChild(letter);
                 }
                 document.getElementById("List").appendChild(row);
@@ -39,6 +56,7 @@ const keys = [
             if (letC < words[rowC].length) {
                 let CurrLet = document.getElementById(rowC + "-" + letC);
                 CurrLet.innerText = e.key.toUpperCase();
+                CurrLet.classList.add("white")
                 letC += 1;
             }
         } 
@@ -46,7 +64,8 @@ const keys = [
             if (letC > 0) {
                 letC -= 1;
                 let CurrLet = document.getElementById(rowC + "-" + letC);
-                CurrLet.innerText = "⌴";
+                CurrLet.innerText = "";
+                CurrLet.classList.remove("white")
             }
         }
         else if (e.code == "Enter") {
@@ -61,7 +80,6 @@ const keys = [
               {
                 let CurrLet = document.getElementById((rowC-1).toString() + '-' + c.toString());
                 CurrLet.classList.add("colour" + (rowC-1).toString());
-                console.log(CurrLet.classList)
               }
               for (let c = 0; c < words[rowC].length; c++) {
                 setTimeout(() => colourchange(c), 200*c);
@@ -69,19 +87,23 @@ const keys = [
               rowC+=1
               letC=0
               if(rowC>=words.length){
+                setTimeout(() => openResults(), 2000);
+                
                 finish()
               }
               else{
+                document.getElementById("Attempts").innerText = "Failed Attempts: "+attempts[rowC].toString();
                 let clue=document.getElementById("Clue");
               clue.innerText=clues[rowC]
               }
             }
             else{
-              attempts+=1
-              document.getElementById("Attempts").innerText = "Failed Attempts: "+attempts.toString();
+              attempts[rowC]+=1
+              document.getElementById("Attempts").innerText = "Failed Attempts: "+attempts[rowC].toString();
               for (let c = 0; c < words[rowC].length; c++) {
                 let CurrLet = document.getElementById(rowC.toString() + '-' + c.toString());
-                CurrLet.innerText="⌴"
+                CurrLet.classList.remove("white")
+                CurrLet.innerText=""
                 letC=0
               }
             }
@@ -136,3 +158,32 @@ const keys = [
 
         document.dispatchEvent(event);
       }
+      function finish() {
+        const scoreList = document.getElementById('ScoreList');
+        for (let c = 0; c < attempts.length; c++){
+            let listItem = document.createElement("p");
+            console.log(attempts[c])
+            listItem.textContent = attempts[c].toString() +' attempts';
+            scoreList.appendChild(listItem);
+        }
+      }
+function share(){
+  document.getElementById("shareButton").addEventListener('click', () => {
+    if (navigator.share) {
+        navigator.share({
+            title: 'I solved Cryptic Links #'+(day+1).toString,
+            text: `🟨: ${attempts[0]} attempts\n` +
+            `🟩: ${attempts[1]} attempts\n` +
+            `🟦: ${attempts[2]} attempts\n` +
+            `🟪: ${attempts[3] || '0'} attempts`,
+            url: "https://must-be-mad.github.io/Games/Cryptic-Links.html"
+        }).then(() => {
+            console.log('Thanks for sharing!');
+        }).catch((error) => {
+            console.error('Something went wrong sharing the content', error);
+        });
+    } else {
+        alert('Web Share API not supported in your browser.');
+    }
+});
+}
