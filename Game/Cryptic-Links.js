@@ -167,25 +167,25 @@ const keys = [
             scoreList.appendChild(listItem);
         }
       }
-function share(){
-  document.getElementById("shareButton").addEventListener('click', () => {
-    if (navigator.share) {
-        navigator.share({
-            title: 'I solved Cryptic Links #'+(day+1).toString,
-            text: 
-            'I solved Cryptic Links #'+(day+1).toString+'\n\n'+
-            `🟨: ${attempts[0]} attempts\n` +
-            `🟩: ${attempts[1]} attempts\n` +
-            `🟦: ${attempts[2]} attempts\n` +
-            `🟪: ${attempts[3] || '0'} attempts`,
-            url: "https://must-be-mad.github.io/Games/Cryptic-Links.html"
-        }).then(() => {
-            console.log('Thanks for sharing!');
-        }).catch((error) => {
-            console.error('Something went wrong sharing the content', error);
+      function share() {
+        document.getElementById("shareButton").addEventListener('click', () => {
+          if (navigator.share) {
+            navigator.share({
+              title: `I solved Cryptic Links #${(day + 1).toString()}`,
+              text: 
+                `I solved Cryptic Links #${(day + 1).toString()}\n\n` +
+                `🟨: ${attempts[0]} attempts\n` +
+                `🟩: ${attempts[1]} attempts\n` +
+                `🟦: ${attempts[2]} attempts\n` +
+                `🟪: ${attempts[3] || '0'} attempts`,
+              url: "https://must-be-mad.github.io/Games/Cryptic-Links.html"
+            }).then(() => {
+              console.log('Thanks for sharing!');
+            }).catch((error) => {
+              console.error('Something went wrong sharing the content', error);
+            });
+          } else {
+            alert('Web Share API not supported in your browser.');
+          }
         });
-    } else {
-        alert('Web Share API not supported in your browser.');
-    }
-});
-}
+      }
