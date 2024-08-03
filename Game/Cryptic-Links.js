@@ -172,7 +172,9 @@ function share(){
     if (navigator.share) {
         navigator.share({
             title: 'I solved Cryptic Links #'+(day+1).toString,
-            text: `🟨: ${attempts[0]} attempts\n` +
+            text: 
+            'I solved Cryptic Links #'+(day+1).toString+'\n\n'+
+            `🟨: ${attempts[0]} attempts\n` +
             `🟩: ${attempts[1]} attempts\n` +
             `🟦: ${attempts[2]} attempts\n` +
             `🟪: ${attempts[3] || '0'} attempts`,
