@@ -22,10 +22,28 @@ const keys = [
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
   ['Enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫']
 ];
-        var rowC = 0;
         var letC = 0;
         var errors= 0;
-        var attempts=[0,0,0,0];
+
+        function getstate() {
+          const arrayString = localStorage.getItem('state');
+          console.log(arrayString)
+          return arrayString ? JSON.parse(arrayString) : [[5,5,5,5],day, 0];
+        }
+        function savestate(array) {
+          localStorage.setItem('state', JSON.stringify(array));
+          console.log(array)
+        }
+    
+      const state = getstate();
+      if(day!=state[1]){
+        state=[[5,5,5,5],day, 0]
+      }
+
+      var rowC = state[2];
+      var attempts=state[0];
+
+      console.log(state)
         window.onload = function() {
             createKeyboard();
             start();
@@ -50,6 +68,28 @@ const keys = [
             document.addEventListener("keyup", (e) => {
                 press(e)
             })
+            for (let r = 0; r < words.length; r++) {
+             if (r<rowC){
+              function colourchange(c)
+              {
+                let CurrLet = document.getElementById((r).toString() + '-' + c.toString());
+                CurrLet.innerText=words[r][c]
+                CurrLet.classList.add("colour" + (r).toString());
+              }
+              for (let c = 0; c < words[r].length; c++) {
+                setTimeout(() => colourchange(c), 200*c);
+              }
+             }
+            }
+            if(rowC>=4){
+              clue.innerText=clues[3]
+              setTimeout(() => openResults(), 2000);
+              finish()
+              document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC-1].toString();
+            }
+            else{
+              document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC].toString();
+            }
         }
         function press(e){
           console.log(e)
@@ -93,22 +133,42 @@ const keys = [
                 finish()
               }
               else{
-                document.getElementById("Attempts").innerText = "Failed Attempts: "+attempts[rowC].toString();
+                document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC].toString();
                 let clue=document.getElementById("Clue");
               clue.innerText=clues[rowC]
               }
             }
             else{
-              attempts[rowC]+=1
-              document.getElementById("Attempts").innerText = "Failed Attempts: "+attempts[rowC].toString();
+              attempts[rowC]-=1
+              if (attempts[rowC]==0){
+                function colourchange(c)
+                {
+                  let CurrLet = document.getElementById((rowC-1).toString() + '-' + c.toString());
+                  CurrLet.innerText=words[rowC-1][c]
+                  CurrLet.classList.add("colour" + (rowC-1).toString());
+                }
+                for (let c = 0; c < words[rowC].length; c++) {
+                  setTimeout(() => colourchange(c), 200*c);
+                }
+                attempts[rowC]-=1
+                rowC+=1
+                letC=0
+                if(rowC>=words.length){
+                  setTimeout(() => openResults(), 2000);
+                  
+                  finish()
+                }
+              }
               for (let c = 0; c < words[rowC].length; c++) {
                 let CurrLet = document.getElementById(rowC.toString() + '-' + c.toString());
                 CurrLet.classList.remove("white")
                 CurrLet.innerText=""
                 letC=0
               }
+              document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC].toString();
             }
           }
+          savestate([attempts,day,rowC]);
           }
         }
         function createKeyboard() {
@@ -163,8 +223,12 @@ const keys = [
         const scoreList = document.getElementById('ScoreList');
         for (let c = 0; c < attempts.length; c++){
             let listItem = document.createElement("p");
-            console.log(attempts[c])
-            listItem.textContent = attempts[c].toString() +' attempts';
+            if (attempts[c]>=0){
+            listItem.textContent = attempts[c].toString() +' attempts to spare';
+            }
+            else{
+              listItem.textContent = 'You did not get this word';
+            }
             scoreList.appendChild(listItem);
         }
       }
@@ -173,13 +237,12 @@ const keys = [
           if (navigator.share) {
             navigator.share({
               title: `I solved Cryptic Links #${(day + 1).toString()}`,
-              text: 
-                `I solved Cryptic Links #${(day + 1).toString()}\n\n` +
-                `🟨: ${attempts[0]} attempts\n` +
-                `🟩: ${attempts[1]} attempts\n` +
-                `🟦: ${attempts[2]} attempts\n` +
-                `🟪: ${attempts[3] || '0'} attempts\n\n`,
-              url: "https://must-be-mad.github.io/Game/Cryptic-Links.html"
+              text:  `I solved Cryptic Links #${(day + 1).toString()}\n\n` +
+            `🟨: ${attempts[0] < 0 ? 'missed' : attempts[0] + ' attempts to spare'}\n` +
+             `🟩: ${attempts[1] < 0 ? 'missed' : attempts[1] + ' attempts to spare'}\n` +
+             `🟦: ${attempts[2] < 0 ? 'missed' : attempts[2] + ' attempts to spare'}\n` +
+             `🟪: ${attempts[3] < 0 ? 'missed' : (attempts[3] || '0') + ' attempts to spare'}\n\n`,
+              url: "https://must-be-mad.github.io/Games/Cryptic-Links.html"
             }).then(() => {
               console.log('Thanks for sharing!');
             }).catch((error) => {
