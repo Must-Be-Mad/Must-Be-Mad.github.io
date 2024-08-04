@@ -242,7 +242,7 @@ const keys = [
              `🟩: ${attempts[1] < 0 ? 'missed' : attempts[1] + ' attempts to spare'}\n` +
              `🟦: ${attempts[2] < 0 ? 'missed' : attempts[2] + ' attempts to spare'}\n` +
              `🟪: ${attempts[3] < 0 ? 'missed' : (attempts[3] || '0') + ' attempts to spare'}\n\n`,
-              url: "https://must-be-mad.github.io/Games/Cryptic-Links.html"
+              url: "https://must-be-mad.github.io/Game/Cryptic-Links.html"
             }).then(() => {
               console.log('Thanks for sharing!');
             }).catch((error) => {
