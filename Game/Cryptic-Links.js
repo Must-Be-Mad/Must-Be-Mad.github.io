@@ -1,15 +1,16 @@
 const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
+["WINDOW", "GLASS", "MATERIAL", "FABRIC"],
 ["FLOWER", "ROSE", "WHITE", "EGG"],
 ["BUTTON", "SHIRT", "FORMAL", "PARTY"],
 ["FUNNY", "COMIC", "BATMAN", "ROBIN"],
 ["CHARIOT", "SOLDIER", "CANON", "ARSENAL"]
 ]
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
+["To earn a deer", "Well wishes to a donkey", "Little Mermaid with little gloss", "An awesome building material"],
 ["The ooze of the mistake", "ρρρ", "An attack between us", "Breaking a leg is an L"],
-  ["The rear is really heavy", "Pain within a holy man", "To create everything", "Golf average with a golf stand"],
-  ["A joyous joint", "Repulsion at a domain", "Money machine in an embargo", "As opposed to give out"],
-  ["Burning violent protestors", "Being even more purchased", "Tin above", "To burn everything"]
-
+["The rear is really heavy", "Pain within a holy man", "To create everything", "Golf average with a golf stand"],
+["A joyous joint", "Repulsion at a domain", "Money machine in an embargo", "As opposed to give out"],
+["Burning violent protestors", "Being even more purchased", "Tin above", "To burn everything"]
 ]
 const day =  Math.floor((new Date() - new Date('2024-08-03')) / (2000 * 60 * 60 * 24));
 const words = wordlist[day];
