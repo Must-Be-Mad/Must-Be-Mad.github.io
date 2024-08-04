@@ -343,12 +343,12 @@ header {
         width: 50%;
         margin: 0 25%;
         color: white;
-        font-size: 4vh;
+        font-size: 3vh;
     }
     #results p{
         width: 50%;
         color: white;
-        font-size: 2vh;
+        font-size: 3vh;
         text-align: center;
     }
     #results h1{
