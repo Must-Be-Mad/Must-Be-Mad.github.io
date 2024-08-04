@@ -198,7 +198,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    height:40vh;
     max-height: 50%;
 }
 
@@ -399,7 +399,7 @@ header {
     }
 
     #Keyboard{
-        height: 26vh;
+        height: 26%;
     }
 }
 
