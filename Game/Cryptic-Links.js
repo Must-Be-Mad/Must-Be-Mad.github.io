@@ -178,7 +178,7 @@ const keys = [
                 `🟩: ${attempts[1]} attempts\n` +
                 `🟦: ${attempts[2]} attempts\n` +
                 `🟪: ${attempts[3] || '0'} attempts\n\n`,
-              url: "https://must-be-mad.github.io/Games/Cryptic-Links.html"
+              url: "https://must-be-mad.github.io/Game/Cryptic-Links.html"
             }).then(() => {
               console.log('Thanks for sharing!');
             }).catch((error) => {
