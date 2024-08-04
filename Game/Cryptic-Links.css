@@ -411,6 +411,9 @@ header {
         width: 200%;
         font-size:40px;
     }
+    #Keyboard{
+        height: 26%;
+    }
 }
 
 @media screen and (max-width: 768px) {
