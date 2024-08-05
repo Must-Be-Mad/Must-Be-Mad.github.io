@@ -152,6 +152,8 @@ const keys = [
                 }
                 attempts[rowC]-=1
                 rowC+=1
+                let clue=document.getElementById("Clue");
+              clue.innerText=clues[rowC]
                 letC=0
                 if(rowC>=words.length){
                   setTimeout(() => openResults(), 2000);
