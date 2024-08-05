@@ -331,9 +331,9 @@ header {
     }
     .letter {
         font-size: 2.5vh;
-        height: 11vw;
-        width: 11vw;
-        margin: 0 0.8vh;
+        height: 10vw;
+        width: 10vw;
+        margin: 0 0.5vw;
     }
     #results span{
         width: 50%;

@@ -35,7 +35,7 @@ const keys = [
           console.log(array)
         }
     
-      const state = getstate();
+      var state = getstate();
       if(day!=state[1]){
         state=[[5,5,5,5],day, 0]
       }
@@ -242,7 +242,7 @@ const keys = [
              `🟩: ${attempts[1] < 0 ? 'missed' : attempts[1] + ' attempts to spare'}\n` +
              `🟦: ${attempts[2] < 0 ? 'missed' : attempts[2] + ' attempts to spare'}\n` +
              `🟪: ${attempts[3] < 0 ? 'missed' : (attempts[3] || '0') + ' attempts to spare'}\n\n`,
-              url: "https://must-be-mad.github.io/Game/Cryptic-Links.html"
+              url: "https://must-be-mad.github.io/Games/Cryptic-Links.html"
             }).then(() => {
               console.log('Thanks for sharing!');
             }).catch((error) => {
