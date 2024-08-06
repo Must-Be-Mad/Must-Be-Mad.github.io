@@ -14,7 +14,7 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["Burning violent protestors", "Being even more purchased", "Tin above", "To burn everything"],
 ["To require it blunt", "How a pig could fly", "Potatoes served with a lustre", "Getting the graphite's attention"]
 ]
-const day =  Math.floor((new Date() - new Date('2024-08-03')) / (2000 * 60 * 60 * 24));
+const day =  Math.floor((new Date() - new Date('2024-08-05')) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
 const clues = cluelist[day];
 const keys = [
