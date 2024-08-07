@@ -80,7 +80,7 @@ header {
     position: absolute;
     left: 25%;
     right: 25vw;
-    height: 50%;
+    height: 60%;
     top: 25%;
     width:50vw;
     background-color: #272c58;
@@ -180,21 +180,6 @@ header {
     font-size: 3vh; /* Responsive font size */
     box-sizing: border-box; /* Include padding in width/height */
 }
-#Clue {
-    background-color: #262b51;
-    left:0;
-    height: 5vh; /* Responsive height */
-    text-wrap: wrap;
-    width: 100%;
-    max-width: 1024px;
-    margin-bottom: 1%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    font-size: 2.5vh; /* Responsive font size */
-    box-sizing: border-box; /* Include padding in width/height */
-}
 #List {
     display: flex;
     flex-direction: column;
@@ -204,11 +189,13 @@ header {
     max-height: 50%;
 }
 
-#row {
-    margin: 1vh 0; /* Responsive margin */
+.row {
+    padding: 1vh 0; /* Responsive margin */
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 1024px;
+    cursor: pointer;
 }
 
 .letter {
@@ -248,21 +235,55 @@ header {
     transition: background-color 0.2s ease;
     animation: pop 0.2s ease;
 }
-.colour0{
-    background-color: rgb(255, 255, 172);
+
+#Clue {
+    background-color: #262b51;
+    left:0;
+    height: 5vh; /* Responsive height */
+    text-wrap: wrap;
+    width: 100%;
+    max-width: 1024px;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-size: 2.5vh; /* Responsive font size */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+.bgY{
+    background-color: rgb(255, 255, 172) !important;
     transition: background-color 1s ease;
 }
-.colour1{
-    background-color: rgb(204, 254, 166);
+.Y{
+    border: 1px solid rgb(255, 255, 172) !important;
+}
+.bgG{
+    background-color: rgb(204, 254, 166) !important;
     transition: background-color 1s ease;
 }
-.colour2{
-    background-color: rgb(182, 244, 255);
+.G{
+    border: 1px solid rgb(204, 254, 166) !important;
+}
+.bgB{
+    background-color: rgb(182, 244, 255) !important;
     transition: background-color 1s ease;
 }
-.colour3{
-    background-color: rgb(255, 189, 242);
+.B{
+    border: 1px solid rgb(182, 244, 255) !important;
+}
+.bgP{
+    background-color: rgb(255, 189, 242) !important;
     transition: background-color 1s ease;
+}
+.P{
+    border: 1px solid rgb(255, 189, 242);
+}
+
+.Selected{
+    background-color: #586099 !important;
+    background-size: 2% 100vw !important;
+    transition: 1s;
 }
 .key {
     width: 6vh; /* Responsive width */
@@ -393,8 +414,9 @@ header {
         cursor: pointer;
         color: white;
     }
-    #row{
-        margin-top: 2vh;
+    .row{
+        padding: 1vh 0;
+        width:100vw;
     }
     .krow {
         width: 100vw;
