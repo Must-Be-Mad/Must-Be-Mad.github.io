@@ -51,7 +51,8 @@ const keys = [
                 let row = document.createElement("div");
                 row.classList.add("row");
                 row.onclick = function() {
-                  if (!row.classList.contains("Selected")){
+                  if (!row.classList.contains("Selected") && state[2][Array.from(document.getElementsByClassName("row")).indexOf(row)]==-1){
+                    let clue=document.getElementById("Clue");
                     clue.classList.remove("bg"+colours[rowC])
                     for (let c = 0; c < words[rowC].length; c++) {
                       let CurrLet = document.getElementById(rowC.toString() + '-' + c.toString());
@@ -150,10 +151,12 @@ const keys = [
               for (let c = 0; c < words[rowC].length; c++) {
                 setTimeout(() => colourchange(c), 200*c);
               }
-              
+              let clue=document.getElementById("Clue")
+              clue.classList.remove("bg"+colours[rowC])
               state[2][rowC]=1+Math.max(...state[2])
               document.getElementsByClassName("row")[rowC].classList.remove("Selected")
               rowC = state[2].indexOf(-1);
+              clue.classList.add("bg"+colours[rowC])
               letC=0
               if(rowC==-1){
                 
@@ -188,7 +191,10 @@ const keys = [
                 attempts[rowC]-=1
                 state[2][rowC]=1+Math.max(...state[2])
                 document.getElementsByClassName("row")[rowC].classList.remove("Selected")
+                let clue=document.getElementById("Clue")
+              clue.classList.remove("bg"+colours[rowC])
                 rowC = state[2].indexOf(-1);
+                clue.classList.add("bg"+colours[rowC])
                 letC=0
                 if(rowC==-1){
                   let clue=document.getElementById("Clue")
