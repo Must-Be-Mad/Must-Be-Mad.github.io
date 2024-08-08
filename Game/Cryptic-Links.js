@@ -4,19 +4,41 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["BUTTON", "SHIRT", "FORMAL", "PARTY"],
 ["FUNNY", "COMIC", "BATMAN", "ROBIN"],
 ["CHARIOT", "SOLDIER", "CANON", "ARSENAL"],
-["NEEDLE", "SEWING", "MACHINE", "OILED"]
+["NEEDLE", "SEWING", "MACHINE", "OILED"],
+["OFFICE", "COMEDY", "STANDING", "DESK"],
+["KARATE", "KID", "STUDENT", "SENSEI"],
+["PROGRAM", "WEDDING", "RECEPTION", "NETWORK"],
+["ANY", "TIME", "BOOK", "CHOICE"]
 ]
+//after office you have to add cycle
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
 ["To earn a deer", "Well wishes to a donkey", "Little Mermaid with little gloss", "An awesome building material"],
 ["The ooze of the mistake", "ρρρ", "An attack between us", "Breaking a leg is an L"],
 ["The rear is really heavy", "Superman to Kryptonite", "To create everything", "Golf average with a golf stand"],
 ["A joyous joint", "Repulsion at a domain", "Money machine in an embargo", "As opposed to give out"],
 ["Burning violent protestors", "Being even more purchased", "Tin above", "To burn everything"],
-["To require it blunt", "How a pig could fly", "Potatoes served with a lustre", "Getting the graphite's attention"]
+["To require it blunt", "How a pig could fly", "Potatoes served with a lustre", "Getting the graphite's attention"],
+["The show would just be dancing","To arrive with a note", "Spiderman maker ringing a bell", "Spanish is in Donkey Kong"],
+["Delevingne's Drink","A goat joke", "Deforming the broth", "To detect the alpha"],
+["A supporter of a weight","Eddy and Ed's friend in a hospital section", "A sequel to a dreamy film", "The sum effort"],
+["Neon","Put myself in handcuffs", "Peep is alright", "Pak frost"]
 ]
-const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"]]
+const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
+["A female deer","textify 'well wishes","Ariel is the little mermaid","What are most houses made of?"],
+["The movement of a river is a type of ooze","The letter is rho","Word for 'attack' inside word for 'us'","'Break off' an 'L'"],
+["Unit of mass","Superman's symbol","'Create' or 'put together'","Golf terms"],
+["Bodily Joint",".com, .net, .io etc","Money machine is an abbreviation","Oppose each word"],
+["Burning really really badly","Comparative suffix used weirdly","Double synonyms","Burn with intent"],
+["alt. To require it boring","A female pig","Potato serving format","Onomatopoeia"],
+["Dancing on ice", "Musical note", "Stan Lee made spiderman", "Spanish 'is'"],
+["Cara Delevingne is a model/actress", "Two synonyms", "Deform as in metal", "Alpha in the Latin Alphabet"],
+["A supporter is a prefix", "What is the midpoint of 'Ed' and 'Eddy'", "A sequel to Inception", "Sum as in total"],
+["Neon is 'Ne' on the periodic table", "alt. I am from Bangkok", "A famous 'Peep'", "Dish containing Pak"]
+]
+const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"]]
 const day =  Math.floor((new Date() - new Date('2024-08-05')) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
+const hints = hintslist[day];
 const clues = cluelist[day];
 const colours =difflist[day];
 const keys = [
@@ -28,14 +50,14 @@ const keys = [
         var errors= 0;
         function getstate() {
           const arrayString = localStorage.getItem('state');
-          return arrayString ? JSON.parse(arrayString) : [[4,4,4,4],day, [-1,-1,-1,-1]];
+          return arrayString ? JSON.parse(arrayString) : [[3,3,3,3],day, [-1,-1,-1,-1]];
         }
         function savestate(array) {
           localStorage.setItem('state', JSON.stringify(array));
         }
       var state = getstate();
       if(day!=state[1]){
-        state=[[4,4,4,4],day, [-1,-1,-1,-1]]
+        state=[[3,3,3,3],day, [-1,-1,-1,-1]]
       }
       var rowC = state[2].indexOf(-1);
       var attempts=state[0];
@@ -67,6 +89,9 @@ const keys = [
                     }
                     row.classList.add("Selected");
                     document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC].toString();
+                    if(attempts[rowC]==0){
+                      document.getElementById("Attempts").innerText = "Last Chance Hint: "+hints[rowC]
+                    }
                     clue.classList.add("bg"+colours[rowC])
                     clue.innerText=clues[rowC]
                   }
@@ -106,7 +131,10 @@ const keys = [
               }
              }
             }
-            if(rowC==-1){
+            if(attempts[rowC]==0){
+              document.getElementById("Attempts").innerText = "Last Chance Hint: "+hints[rowC]
+            }
+            else if(rowC==-1){
               setTimeout(() => openResults(), 2000);
               finish()
               document.getElementById("Attempts").innerText = "Attempts";
@@ -186,7 +214,11 @@ function press(e) {
             }
             else{
               attempts[rowC]-=1
-              if (attempts[rowC]==0){
+              document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC].toString();
+              if(attempts[rowC]==0){
+                document.getElementById("Attempts").innerText = "Last Chance Hint: "+hints[rowC]
+              }
+              else if (attempts[rowC]==-1){
                 function colourchange(c)
                 {
                   let CurrLet = document.getElementById((temp).toString() + '-' + c.toString());
@@ -197,7 +229,6 @@ function press(e) {
                 for (let c = 0; c < words[rowC].length; c++) {
                   setTimeout(() => colourchange(c), 200*c);
                 }
-                attempts[rowC]-=1
                 state[2][rowC]=1+Math.max(...state[2])
                 document.getElementsByClassName("row")[rowC].classList.remove("Selected")
                 let clue=document.getElementById("Clue")
@@ -227,7 +258,6 @@ function press(e) {
                 CurrLet.innerText=""
                 letC=0
               }
-              document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC].toString();
             }
           }
           savestate(state);
@@ -294,7 +324,7 @@ function press(e) {
         const colorChar = colours[index];
         const emoji = emojiMap[colorChar];
         const attempt = attempts[index];
-        const attemptText = attempt < 0 ? 'missed' : attempt + ' attempts to spare';
+        const attemptText = attempt === -1 ? 'Missed' : attempt === 0 ? 'Hint used' : attempt + ' attempts to spare';
         return `${emoji}: ${attemptText}`;
     });
 
@@ -317,7 +347,7 @@ function press(e) {
             const colorChar = colours[index];
             const emoji = emojiMap[colorChar];
             const attempt = attempts[index];
-            const attemptText = attempt < 0 ? 'missed' : attempt + ' attempts to spare';
+            const attemptText = attempt === -1 ? 'Missed' : attempt === 0 ? 'Hint used' : attempt + ' attempts to spare';
             return `${emoji}: ${attemptText}`;
         });
     
