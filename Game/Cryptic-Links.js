@@ -90,10 +90,9 @@ const keys = [
               clue.classList.add("Selected")
               clue.innerText="Puzzle Solved!"
             }
-            console.log(document.getElementsByClassName("row"))
-            document.addEventListener("keyup", (e) => {
-                press(e)
-            })
+
+
+
             for (let r = 0; r < words.length; r++) {
              if (state[2][r]>=0){
               function colourchange(c)
@@ -116,25 +115,35 @@ const keys = [
               document.getElementById("Attempts").innerText = "Attempts Remaining: "+attempts[rowC].toString();
             }
         }
-        function press(e){
-          console.log(e)
-          if ("KeyA" <= e.code && e.code <= "KeyZ") {
-            if (letC < words[rowC].length) {
-                let CurrLet = document.getElementById(rowC + "-" + letC);
-                CurrLet.innerText = e.key.toUpperCase();
-                CurrLet.classList.add("white")
-                letC += 1;
-            }
-        } 
-        else if (e.code == "Backspace") {
-            if (letC > 0) {
-                letC -= 1;
-                let CurrLet = document.getElementById(rowC + "-" + letC);
-                CurrLet.innerText = "";
-                CurrLet.classList.remove("white")
-            }
+
+document.addEventListener("keyup", (e) => {
+    press(e);
+});
+
+function press(e) {
+    const key = e.key.toUpperCase();  // Convert to uppercase to handle both layouts
+    const code = e.code;
+
+    // Handle alphabetic keys (A-Z)
+    if (code >= "KeyA" && code <= "KeyZ") {
+        if (letC < words[rowC].length) {
+            let CurrLet = document.getElementById(`${rowC}-${letC}`);
+            CurrLet.innerText = key;
+            CurrLet.classList.add("white");
+            letC += 1;
         }
-        else if (e.code == "Enter") {
+    }
+    // Handle Backspace
+    else if (code === "Backspace") {
+        if (letC > 0) {
+            letC -= 1;
+            let CurrLet = document.getElementById(`${rowC}-${letC}`);
+            CurrLet.innerText = "";
+            CurrLet.classList.remove("white");
+        }
+    }
+    // Handle Enter
+    else if (code === "Enter") {
           if (letC==words[rowC].length) {
             let guess=""
             for (let c = 0; c < words[rowC].length; c++) {
