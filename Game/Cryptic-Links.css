@@ -169,15 +169,16 @@ header {
 #Attempts{
     height: 5vh; /* Responsive height */
     text-wrap: wrap;
-    margin-top: 2%;
+    margin-top: 3%;
     width: 100%;
     max-width: 1024px;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     color: #ffffff;
     font-weight: 500;
-    font-size: 3vh; /* Responsive font size */
+    font-size: 2.5vh; /* Responsive font size */
     box-sizing: border-box; /* Include padding in width/height */
 }
 #List {
@@ -322,7 +323,7 @@ header {
 @media screen and (max-width: 768px) {
 
     .key {
-        height: 4vh;
+        height: 6vh;
         font-size: 2.2vh;
     }
 
@@ -341,7 +342,7 @@ header {
         right: 10vw;
         height: 60%;
         top: 15%;
-        width:80vw;
+        width:90vw;
         background-color: #272c58;
         border: 2px solid #7c84c3; /* Border color */
         border-radius: 1vw;
@@ -423,7 +424,7 @@ header {
     }
 
     #Keyboard{
-        height: 26%;
+        height: 30%;
     }
 }
 
