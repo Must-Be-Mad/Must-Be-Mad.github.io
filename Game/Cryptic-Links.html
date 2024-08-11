@@ -11,10 +11,68 @@
     document.getElementById('information').style.bottom = '0';
     document.getElementById('information').style.scale = '1';
 }
+function Cyc() {
+    const container = document.getElementById('List');
+    const divs = container.querySelectorAll('.row');
+    const divArray = Array.from(divs);
 
+    if (divArray.length === 0) return;
+
+    function permuteArray(array) {
+        // Handle case when there is only one element
+        if (array.length < 2) return;
+
+        const lastDiv = array.pop();
+        const other1= array[0]
+        const other2= array[1]
+        const other3= array[2]
+
+        // Add the last div to the beginning of the array
+        array.unshift(lastDiv);
+        const y=lastDiv.style.zIndex
+        lastDiv.style.zIndex=8
+
+        // Apply initial transform for animation
+        lastDiv.style.transform = 'translateY(300%)'; // Slide out of view
+        other1.style.transform = 'translateY(-100%)'; // Slide out of view
+        other2.style.transform = 'translateY(-100%)'; // Slide out of view
+        other3.style.transform = 'translateY(-100%)'; // Slide out of view
+
+        // Force reflow to apply the initial transform immediately
+        lastDiv.offsetHeight; // This triggers a reflow
+
+        // Insert the last div at the beginning
+        container.insertBefore(lastDiv, container.firstChild);
+
+        // Trigger the slide-in animation
+        requestAnimationFrame(() => {
+            lastDiv.style.transform = 'translateY(0)';
+            other1.style.transform = 'translateY(0)';
+            other2.style.transform = 'translateY(0)';
+            other3.style.transform = 'translateY(0)';
+            lastDiv.style.zIndex=y
+        });
+
+        // Clean up after animation
+        setTimeout(() => {
+            lastDiv.style.transition = ''; // Reset transition property
+            lastDiv.style.transform = '';  // Reset transform property
+        }, 500); // Match this to the transition duration
+    }
+
+    // Apply permutation with animation
+    permuteArray(divArray);
+
+    // Clear the container and re-append all divs
+    container.innerHTML = '';
+    divArray.forEach(div => container.appendChild(div));
+}
 function HelpClose() {
     document.getElementById('information').style.bottom = '-100%';
-    document.getElementById('information').style.scale = '0';
+    setTimeout(() => {
+        document.getElementById('information').style.scale = '0';
+        }, 300)
+    
 }
 function openResults() {
     const resultsDiv = document.getElementById('results');
@@ -43,7 +101,7 @@ function closeResults() {
         <button id="closeButton" onclick="HelpClose()">×</button>
         <h1>How to Play</h1>
         <h2>Aim of the Game</h2>
-        <p>The aim of the game is to guess all 4 words in as few attempts as possible. Each word is related in some fashion to the adjacent words (the first will link to the bottom after the 11th of August ). They can be an examples of, types of, a synonym for, or an alternate meaning etc.</p>
+        <p>The aim of the game is to guess all 4 words in as few attempts as possible. Each word (except the first) is related in some fashion to the adjacent words (the top links to the bottom). They can be an examples of, types of, a synonym for, or an alternate meaning etc. Watch out for puns and double-meanings!</p>
         <h2>How do the clues work?</h2>
         <p>Clues tend to vary a bit. A common thing to look out for are homophones (puns) and concatenating (joining) two words together. For example, for a Christmas clue, "A simpson requesting money from the bank" would be "Home Alone" as a pun on "Homer Loan". Most other forms of wordplay such as anagrams will be signposted.</p>
         <h2>Difficulty</h2>
@@ -56,10 +114,11 @@ function closeResults() {
             </a>
         </div>
         <div id="Logo"></div>
-        <div onclick="" id="Help"><button style="all: unset; cursor: pointer;" onclick="HelpOpen()">?</div>
+        <div onclick="" id="Help"><button style="all: unset; cursor: pointer;" onclick="HelpOpen()">?</button></div>
     </header>
     <div id="Attempts"> Attempts Remaining: 5</div>
     <div id="List"></div>
+    <button id="Cycle" onclick="Cyc()"> Cycle</button>
     <div id="Clue"></div>
     <div id="Keyboard"></div>
 </body>

@@ -50,7 +50,6 @@ header {
     justify-items: center;
     display: grid;
 }
-
 #information {
     position: fixed;
     bottom: -100%;
@@ -58,7 +57,7 @@ header {
     width: 100vw;
     background-color: #272c58;
     border-top: 4px solid #7c84c3; /* Top border color */
-    transition: bottom 0.3s ease;
+    transition: bottom 0.3s ease-in-out;
     padding: 20px 25% ;
     z-index: 1;
     color:white;
@@ -197,8 +196,14 @@ header {
     justify-content: center;
     width: 1024px;
     cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
+.Selected{
+    background-color: #586099 !important;
+    background-size: 2% 100vw !important;
+    transition: 0.5s;
+}
 .letter {
     font-size: 3vh; /* Responsive font size */
     height: 6vh; /* Responsive height */
@@ -214,6 +219,18 @@ header {
     background-color: #000622;
     font-weight: 550;
     transition: background-color 0.2s ease;
+}
+
+#Cycle{
+    all:unset;
+    height:6vh;
+    width:12vh;
+    text-align: center;
+    margin-bottom: 2%;
+    font-size:2vh;
+    color:white;
+    border:#ffffff solid 2px;
+    border-radius: 1vh;
 }
 
 #Keyboard {
@@ -281,11 +298,6 @@ header {
     border: 1px solid rgb(255, 189, 242);
 }
 
-.Selected{
-    background-color: #586099 !important;
-    background-size: 2% 100vw !important;
-    transition: 1s;
-}
 .key {
     width: 6vh; /* Responsive width */
     height: 6vh; /* Responsive height */
@@ -331,6 +343,18 @@ header {
         width: 8vh;
         font-size:1.8vh;
     }
+    #Cycle{
+        all:unset;
+        height:10vw;
+        width:20vw;
+        text-align: center;
+        margin-top: -5%;
+        margin-bottom: 10%;
+        font-size:2vh;
+        color:white;
+        border:#ffffff solid 2px;
+        border-radius: 1vh;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -338,7 +362,7 @@ header {
         justify-content: center;
         display: block;
         position: absolute;
-        left: 10%;
+        left: 5%;
         right: 10vw;
         height: 60%;
         top: 15%;
