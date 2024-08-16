@@ -8,7 +8,9 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["OFFICE", "COMEDY", "STANDING", "DESK"],
 ["KARATE", "KID", "STUDENT", "SENSEI"],
 ["PROGRAM", "WEDDING", "RECEPTION", "NETWORK"],
-["ANY", "TIME", "BOOK", "CHOICE"]
+["ANY", "TIME", "BOOK", "CHOICE"],
+["SUDOKU","NEWSPAPER","ARTICLE","COLUMN"],
+["SOLE","LIFE","LOVE","MATE"]
 ]
 //after office you have to add cycle
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
