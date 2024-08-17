@@ -10,7 +10,11 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["PROGRAM", "WEDDING", "RECEPTION", "NETWORK"],
 ["ANY", "TIME", "BOOK", "CHOICE"],
 ["SUDOKU","NEWSPAPER","ARTICLE","COLUMN"],
-["SOLE","LIFE","LOVE","MATE"]
+["SOLE","LIFE","LOVE","MATE"],
+["NUMBER","MEASURE","ESTIMATE","FEEL"],
+["FINALE","SEASON","FALL","END"],
+["MOTORWAY","VELOCITY","POSITION","LANE"],
+["ANIMAL","INSECT","FLIGHT","DOMESTIC"],
 ]
 //after office you have to add cycle
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
