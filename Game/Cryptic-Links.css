@@ -79,8 +79,8 @@ header {
     position: absolute;
     left: 25%;
     right: 25vw;
-    height: 60%;
-    top: 25%;
+    height: 75%;
+    top: 10%;
     width:50vw;
     background-color: #272c58;
     border: 2px solid #7c84c3; /* Border color */

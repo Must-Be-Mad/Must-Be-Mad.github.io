@@ -10,13 +10,16 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["PROGRAM", "WEDDING", "RECEPTION", "NETWORK"],
 ["ANY", "TIME", "BOOK", "CHOICE"],
 ["SUDOKU","NEWSPAPER","ARTICLE","COLUMN"],
-["SOLE","LIFE","LOVE","MATE"],
+["SOUL","LIFE","LOVE","MATE"],
 ["NUMBER","MEASURE","ESTIMATE","FEEL"],
 ["FINALE","SEASON","FALL","END"],
 ["MOTORWAY","VELOCITY","POSITION","LANE"],
 ["ANIMAL","INSECT","FLIGHT","DOMESTIC"],
+["TOUCAN","NIGHTINGALE","EAGLE","EGRET"],
+["SHIRT","TOP","PANTS","SHOES"],
+["TOAST","TABLE","EVENING","GUEST"]
 ]
-//after office you have to add cycle
+
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
 ["To earn a deer", "Well wishes to a donkey", "Little Mermaid with little gloss", "An awesome building material"],
 ["The ooze of the mistake", "ρρρ", "An attack between us", "Breaking a leg is an L"],
@@ -32,8 +35,11 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["Dissolver that can't let off steam","Fibs with a failure in it","How you start a tennis match","Where in I"],
 ["North brown","I am cast certain","Shuffle teatimes","Iron with a Spanish Guy"],
 ["Beer made of fish limb","Poseidon's offspring","To flip off everyone","Zed's position"],
-["Pick between a ditch and a protein supplement","French bike town","propose a charge","Lois of a narrrow road"],
+["Pick between a ditch and a protein supplement","French bike town","Propose a charge","Lois of a narrrow road"],
 ["Either shopping centre","Belonging to a religious category","Failed Bulb","Possible shape-type of controller toggle"],
+["(You) are also able to","Wind contains day's twin","A chronically online fish and chips snatcher","Are out of regret"],
+["Cher with a hot drink","Addressing Parker's initial","Overlap of a pot with insects","To send away a sludge"],
+["A holy man that has a foot fetish","Swifty that doesn't like red","Doubling something","To estimate a golf stand"]
 ]
 const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
 ["A female deer","textify 'well wishes","Ariel is the little mermaid","What are most houses made of?"],
@@ -50,10 +56,14 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["To steam is also to vent","A failure is a grade","Points of a tennis match","A word inside another"],
 ["Cardinal directions","e.g 'Johnny Depp as Jack sparrow'","Shuffle letters","Iron is 'Fe' on the periodic table"],
 ["Ale is a beer","Poseiden is the god of what","'To flip off' is associated with a letter","Where is 'Z' in the alphabet"],
-["A moat is a ditch","French for bikes is velo","To posit is to propose","Superman's girlfriend"]
-["American term for shopping centre","A sect denotes the latter half","What a bulb produces","A controller toggle can either be concave or..."]
+["A moat is a ditch","French for bikes is velo","To posit is to propose","Superman's girlfriend"],
+["American term for shopping centre","A sect denotes the latter half","What a bulb produces","A controller toggle can either be concave or..."],
+["2-tin","Night-in","E girl e.g","Are as a stand-in for 'r'"],
+["Tea is a hot drink","How do you start a letter","Ants are the insects","To send away is to shoo"],
+["Toes area part of a feet","'Swift' alternative with an animal","If something is double, it's ___","A tee is a stand in golf"]
 ]
-const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"]]
+const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"]]
+const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party"]
 const day =  Math.floor((new Date() - new Date('2024-08-05')+3600000) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
 const hints = hintslist[day];
@@ -371,6 +381,9 @@ function press(e) {
         return `${emoji}: ${attemptText}`;
     });
 
+    let Category = document.createElement("p");
+    Category.innerHTML="The topic was: "+topiclist[day]
+    scoreList.appendChild(Category);
         for (let c = 0; c < attempts.length; c++){
             let listItem = document.createElement("p");
             listItem.innerHTML=resultLines[c]
