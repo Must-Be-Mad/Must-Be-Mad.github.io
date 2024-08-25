@@ -18,7 +18,12 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["TOUCAN","NIGHTINGALE","EAGLE","EGRET"],
 ["SHIRT","TOP","PANTS","SHOES"],
 ["TOAST","TABLE","EVENING","GUEST"],
-["RING","GROOM", "MAID","DINNER"]
+["RING","GROOM", "MAID","DINNER"],
+["DENIM","MAGENTA","AMBER","RED"],
+["AFROBEAT","TRAP","POP","POLKA"],
+["THREE","ELEVEN","NINE","EIGHT"],
+["GRASSHOPPER","ROACH","HONEYBEE","EARWIG"],
+["SPEECH","HOST","TOAST","TRICKS"],
 ]
 
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
@@ -41,7 +46,12 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["(You) are also able to","Wind contains day's twin","A chronically online fish and chips snatcher","Are out of regret"],
 ["Cher with a hot drink","Addressing Parker's initial","Overlap of a pot with insects","To send away a sludge"],
 ["A holy man that has a foot fetish","Swifty that doesn't like red","Doubling something","To estimate a golf stand"],
-["Between a bell and a circle","Space for a note","Mother's identification","A closeby sound"]
+["Between a bell and a circle","Space for a note","Mother's identification","A closeby sound"],
+["Hideout is myself being","When a sorcerer comes in","Hearth that was with Johnny","Education of adult movies"],
+["A rythm with frizzy hair","A backwards part","Initially pretty overpowered","To ask questions to vehicles"],
+["Melt thrice and EE","L=2n","Nickel and Neon","Take the head of fight down a notch"],
+["Mardi buyer","Approach got uninstalled","Pooh bear's favourite food simply is","Fake hear for your audio receptors"],
+["Untangle cheeps","Sounds like someone got drenched from the mains","Adressing a saint","Three Calvin Kleins"]
 ]
 const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
 ["A female deer","textify 'well wishes","Ariel is the little mermaid","What are most houses made of?"],
@@ -63,9 +73,14 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["2-tin","Night-in","E girl e.g","Are as a stand-in for 'r'"],
 ["Tea is a hot drink","How do you start a letter","Ants are the insects","To send away is to shoo"],
 ["Toes area part of a feet","'Swift' alternative with an animal","If something is double, it's ___","A tee is a stand in golf"],
-["Conceptual midpoint","A musical note","How else might one say both words","A loud sound is also a...?"]
+["Conceptual midpoint","A musical note","How else might one say both words","A loud sound is also a...?"],
+["A fox lives in a hideout","Synonym for sorcerer and for entrance","Depp","PG-13 isn't an adult movie"],
+["A drum makes a rythm","Spelling backwards","Text talk it all","A survey is also called"],
+["What can you melt away from three","So L is what?","What are these on the periodic table?","Caesar cipher"],
+["A buyer shops and hence is a","Uninstall a part of approach","Simply is means to __?","What are your audio receptors"],
+["Anagram","What does hosed sound like","You start a letter with dear or?","Three is a prefix"],
 ]
-const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"]]
+const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"]]
 const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding"]
 const day =  Math.floor((new Date() - new Date('2024-08-05')+3600000) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
