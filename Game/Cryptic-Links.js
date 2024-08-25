@@ -40,7 +40,7 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["Either shopping centre","Belonging to a religious category","Failed Bulb","Possible shape-type of controller toggle"],
 ["(You) are also able to","Wind contains day's twin","A chronically online fish and chips snatcher","Are out of regret"],
 ["Cher with a hot drink","Addressing Parker's initial","Overlap of a pot with insects","To send away a sludge"],
-["A holy man that has a foot fetish","Swifty that doesn't like red","Doubling something","To estimate a golf stand"]
+["A holy man that has a foot fetish","Swifty that doesn't like red","Doubling something","To estimate a golf stand"],
 ["Between a bell and a circle","Space for a note","Mother's identification","A closeby sound"]
 ]
 const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
