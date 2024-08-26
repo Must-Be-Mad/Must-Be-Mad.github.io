@@ -47,7 +47,7 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["Cher with a hot drink","Addressing Parker's initial","Overlap of a pot with insects","To send away a sludge"],
 ["A holy man that has a foot fetish","Swifty that doesn't like red","Doubling something","To estimate a golf stand"],
 ["Between a bell and a circle","Space for a note","Mother's identification","A closeby sound"],
-["Hideout is myself being","When a sorcerer comes in","Hearth that was with Johnny","Education of adult movies"],
+["Hideout is myself being","When a sorcerer comes in","Heard that was with Johnny","Education of adult movies"],
 ["A rythm with frizzy hair","A backwards part","Initially pretty overpowered","To ask questions to vehicles"],
 ["Melt thrice and EE","L=2n","Nickel and Neon","Take the head of fight down a notch"],
 ["Mardi buyer","Approach got uninstalled","Pooh bear's favourite food simply is","Fake hear for your audio receptors"],
