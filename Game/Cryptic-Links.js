@@ -24,6 +24,13 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["THREE","ELEVEN","NINE","EIGHT"],
 ["GRASSHOPPER","ROACH","HONEYBEE","EARWIG"],
 ["SPEECH","HOST","TOAST","TRICKS"],
+["TRAMPOLINE", "EQUESTRIAN", "NORDIC", "CRICKET"],
+["SPORT", "TRIES", "SHOW", "WEARS"],
+["MOTORCYCLE", "EXCAVATOR", "ROWBOAT", "TRAM"],
+["DEALER", "RIVER", "RUSH", "HAND"],
+["OVER", "RIVER", "ROAD", "DEMO"],
+["DESIRE", "ENVY", "YEARN", "NEED"],
+["LIFELESS", "SOULLESS", "SAD", "DULL"]
 ]
 
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
@@ -51,7 +58,14 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["A rhythm with frizzy hair","A backwards part","Initially pretty overpowered","To ask questions to vehicles"],
 ["Melt thrice and EE","L=2n","Nickel and Neon","Take the head of fight down a notch"],
 ["Mardi buyer","Approach got uninstalled","Pooh bear's favourite food simply is","Fake hear for your audio receptors"],
-["Untangle cheeps","Sounds like someone got drenched from the mains","Adressing a saint","Three Calvin Kleins"]
+["Untangle cheeps","Sounds like someone got drenched from the mains","Adressing a saint","Three Calvin Kleins"],
+["Train bus next to Mario's ex", "A front to end request to Ian", "Neither Tom, ____, nor Harry", "Cramp gear"],
+["Start of itself plugged in", "Change rites", "The greatest without man", "Winning on the side of your head"],
+["To shuffle around cars", "Used to be bien with anonymous browsing", "A ship that argues", "Ton of random access memory"],
+["Backwards way of asking to fit new lead", "Mispronounced writher", "Between a high and speed", "Solo head of Dagobah"],
+["Open up Rover", "Rover with input instead of output", "Rover habitat", "Mix more Dover without Rover"],
+["Des's anger", "French by vendetta", "An arbitrary year", "Doublee Ned"],
+["A reduced chi", "Without South Korea's capital", "Kapital's pair's reflection", "Model without Mohammad"]
 ]
 const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
 ["A female deer","textify 'well wishes","Ariel is the little mermaid","What are most houses made of?"],
@@ -79,9 +93,10 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["What can you melt away from three","So L is what?","What are these on the periodic table?","Caesar cipher"],
 ["A buyer shops and hence is a","Uninstall a part of approach","Simply is means to __?","What are your audio receptors"],
 ["Anagram","What does hosed sound like","You start a letter with dear or?","Three is a prefix"],
+["Mario's ex is Pauline","Move r to the end of request","Tom, Dick, or Harry","A crick is a cramp"]
 ]
-const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"]]
-const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party"]
+const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"]]
+const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports"]
 const day =  Math.floor((new Date() - new Date('2024-08-05')+3600000) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
 const hints = hintslist[day];
