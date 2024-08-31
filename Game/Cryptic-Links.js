@@ -93,10 +93,11 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["What can you melt away from three","So L is what?","What are these on the periodic table?","Caesar cipher"],
 ["A buyer shops and hence is a","Uninstall a part of approach","Simply is means to __?","What are your audio receptors"],
 ["Anagram","What does hosed sound like","You start a letter with dear or?","Three is a prefix"],
-["Mario's ex is Pauline","Move r to the end of request","Tom, Dick, or Harry","A crick is a cramp"]
+["Mario's ex is Pauline","Move r to the end of request","Tom, Dick, or Harry","A crick is a cramp"],
+["A port is where you plug stuff in", "Anagram","It's a movie name","A w is a win"]
 ]
-const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"]]
-const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports"]
+const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"],["P","G","Y","B"]]
+const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports", "Wearing clothes"]
 const day =  Math.floor((new Date() - new Date('2024-08-05')+3600000) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
 const hints = hintslist[day];
