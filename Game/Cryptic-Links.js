@@ -96,7 +96,10 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["Mario's ex is Pauline","Move r to the end of request","Tom, Dick, or Harry","A crick is a cramp"],
 ["A port is where you plug stuff in", "Anagram","It's a movie name","A w is a win"],
 ["Shuffle is a synonym for something","Ça va?","A type of ship","T is short for Ton"],
-["To fit again is to re-","Mispronounce writher","Conceptual midpoint","From Star Wars"]
+["To fit again is to re-","Mispronounce writher","Conceptual midpoint","From Star Wars"],
+["Rover is enclosed by a letter","I to O","Where would you find a rover","Take away letters in rover"],
+["Anger synonym","By is 'en' in French","nth term","E is twice"],
+["Chi is life","Seoul is a pun","Das Kapital","Mo is a shorthand for mohammed"]
 ]
 const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"],["P","G","Y","B"],["B","P","Y","G"],["P","B","Y","G"]]
 const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports", "Wearing clothes", "Transport","Poker"]
