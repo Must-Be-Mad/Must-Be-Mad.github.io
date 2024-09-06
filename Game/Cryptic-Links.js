@@ -30,7 +30,15 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["DEALER", "RIVER", "RUSH", "HAND"],
 ["OVER", "RIVER", "ROAD", "DEMO"],
 ["DESIRE", "ENVY", "YEARN", "NEED"],
-["LIFELESS", "SOULLESS", "SAD", "DULL"]
+["LIFELESS", "SOULLESS", "SAD", "DULL"],
+["NECK", "KNEE", "EARS", "SKIN"],
+["RAID", "DOOM", "MANHUNT", "TETHER"],
+["FIELD", "DIVES", "STRIKER", "REF"],
+["EROTICA", "ACTION", "NOIR", "ROMANCE"],
+["LEMUR", "ROAM", "MINKS", "SOUL"],
+["POST", "TELEGRAM", "MAILS", "STAMP"],
+["LEAF", "FLOWER", "ROOTS", "SEPAL"],
+["ELEPHANT", "TOWER", "ROYAL", "LANE"]
 ]
 
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
@@ -65,7 +73,15 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["Backwards way of asking to fit new lead", "Mispronounced writher", "Between a high and speed", "Solo head of Dagobah"],
 ["Open up Rover", "Rover with input instead of output", "Rover habitat", "Mix more Dover without Rover"],
 ["Des's anger", "French by vendetta", "An arbitrary year", "Doublee Ned"],
-["A reduced chi", "Without South Korea's capital", "Kapital's pair's reflection", "Model without Mohammad"]
+["A reduced chi", "Without South Korea's capital", "Kapital's pair's reflection", "Model without Mohammad"],
+["Two of these leads to a draw", "Back to the start of neek", "Brontë character's surnames", "Snow sport nitrogen"],
+["Violent movie helper", "Partake in yoga vocal", "To track down and kill a male", "Tea with Heather"],
+["Passed tense of feel", "Division of Spanish", "To knock 10 pins off a woman", "i - e riff"],
+["Mint chocolate with a chicken masala", "Mix of cation", "Not 'yes we is'", "Common era civilisation"],
+["The French gift to Baby Jesus", "mmmm", "Minimum kill streak", "Foot base"],
+["Original soundtrack of P", "Weight of a TV display", "Your losses after April", "Ampere in the church"],
+["Grassland fail", "If Florence was", "A Joey Elliot", "The entirety of September"],
+["Stir then pale", "To haul an error", "E.G. Lizzie, Charlie, Willie", "Los Angeles neon"]
 ]
 const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
 ["A female deer","textify 'well wishes","Ariel is the little mermaid","What are most houses made of?"],
@@ -99,10 +115,18 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["To fit again is to re-","Mispronounce writher","Conceptual midpoint","From Star Wars"],
 ["Rover is enclosed by a letter","I to O","Where would you find a rover","Take away letters in rover"],
 ["Anger synonym","By is 'en' in French","nth term","E is twice"],
-["Chi is life","Seoul is a pun","Das Kapital","Mo is a shorthand for mohammed"]
+["Chi is life","Seoul is a pun","Das Kapital","Mo is a shorthand for mohammed"],
+["__ & __ means they're tied", "Move letters around", "Jane Eyre", "Ski+Nitrogen"],
+["R-rating", "Do what", "A man ___", "T+ Heather"],
+["'Passed' but for 'feel'", "Div Español", "10 pins as in bowling pins", "Switch out 'i' in riff"],
+["Aero+tika", "Anagram", "No, I, are", "Romans"],
+["The in french+myrrh", "m's arranged in a_?", "Kill Streak- k.s.", "Just a pun"],
+["OST", "TV is Telly", "May what?", "St what?"],
+["Lea is a grassland", "Flo for Florence" , "Kangagroo TS", "Sep"],
+["'then pale' is an anagram", "Tow is to hall", "Lizzie died recently", "Abbreviate both"]
 ]
-const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"],["P","G","Y","B"],["B","P","Y","G"],["P","B","Y","G"],["Y","B","G","P"],["Y","P","B","G"],["Y","G","P","B"]]
-const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports", "Wearing clothes", "Transport","Poker","Things that run","Wanting emotion","Boring"]
+const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"],["P","G","Y","B"],["B","P","Y","G"],["P","B","Y","G"],["Y","B","G","P"],["Y","P","B","G"],["Y","G","P","B"],["P", "B", "G", "Y"],["P", "B", "Y", "G"],["Y", "G", "P", "B"],["P", "Y", "G", "B"],["Y", "G", "B", "P"],["Y", "G", "P", "B"],["B", "P", "G", "Y"]]
+const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports", "Wearing clothes", "Transport","Poker","Things that run","Wanting emotion","Boring", "Body Parts","Video Games","Football","Genres","Captial Puns","Postage","Plant parts","London Underground names"]
 const day =  Math.floor((new Date() - new Date('2024-08-05')+3600000) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
 const hints = hintslist[day];
