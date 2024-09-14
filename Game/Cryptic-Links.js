@@ -38,7 +38,14 @@ const wordlist =[["MOVIE", "ACTION", "STRIKE", "WORKERS"],
 ["LEMUR", "ROAM", "MINKS", "SOUL"],
 ["POST", "TELEGRAM", "MAILS", "STAMP"],
 ["LEAF", "FLOWER", "ROOTS", "SEPAL"],
-["ELEPHANT", "TOWER", "ROYAL", "LANE"]
+["ELEPHANT", "TOWER", "ROYAL", "LANE"],
+["DAHLIA", "AZELIA", "ALLIUM", "MARIGOLD"],
+["TONIC", "CIDER", "RUM", "MERLOT"],
+["DEW", "WATER", "RAPIDS", "SPILLED"],
+["TOLL", "LICENSE", "EXHAUST", "TICKET"],
+["YAW", "WEIGHT", "TIME", "ENERGY"],
+["RIB", "BONE", "ENTRAIL", "LIVER"],
+["RAIL", "LINKAGES", "STATIONS", "SIGNALLER"]
 ]
 
 const cluelist =[["Transporting a letter", "To play a charge", "A holy man before a German Rule", "We used to be dogs"],
@@ -81,7 +88,15 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["The French gift to Baby Jesus", "mmmm", "Minimum kill streak", "Foot base"],
 ["Original soundtrack of P", "Weight of a TV display", "Your losses after April", "Ampere in the church"],
 ["Grassland fail", "If Florence was", "A Joey Elliot", "The entirety of September"],
-["Stir then pale", "To haul an error", "E.G. Lizzie, Charlie, Willie", "Los Angeles neon"]
+["Stir then pale", "To haul an error", "E.G. Lizzie, Charlie, Willie", "Los Angeles neon"],
+["Roald's Heath", "Hazel without the head with Internal affairs", "The entirety of a Hemsworth", "To form a union with a precious metal"],
+["A lot to steal", "Her side the other way", "Wasn't our rumour", "Baby Jesus gift went down"],
+["Gross D", "Ate in a world record", "To sing fast about your inner demons", "To drop a molten poisonous metal"],
+["Harry Potter monster isn't very graphic", "To detect hair bugs", "Previous partner fact checked", "To mark it as correct"],
+["Why have an impression", "To remain in anticipation", "I am Titanium", "Life on the inside"],
+["Out of a Ribena", "Be in on the reverse", "Retinal mix up", "To spend a life with a mistake"],
+["Are with a beer", "A connection for a long time", "Analysis of data with charged particles", "To communicate with hands to a French-goer"]
+
 ]
 const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
 ["A female deer","textify 'well wishes","Ariel is the little mermaid","What are most houses made of?"],
@@ -123,9 +138,9 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["The in french+myrrh", "m's arranged in a_?", "Kill Streak- k.s.", "Just a pun"],
 ["OST", "TV is Telly", "May what?", "St what?"],
 ["Lea is a grassland", "Flo for Florence" , "Kangagroo TS", "Sep"],
-["'then pale' is an anagram", "Tow is to hall", "Lizzie died recently", "Abbreviate both"]
+["'then pale' is an anagram", "Tow is to hall", "Lizzie died recently", "Abbreviate both"],
 ]
-const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"],["P","G","Y","B"],["B","P","Y","G"],["P","B","Y","G"],["Y","B","G","P"],["Y","P","B","G"],["Y","G","P","B"],["P", "B", "G", "Y"],["P", "B", "Y", "G"],["Y", "G", "P", "B"], ["P", "Y", "G", "B"], ["P", "B", "G", "Y"],["Y", "G", "B", "P"],["Y", "G", "P", "B"],["B", "P", "G", "Y"]]
+const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"],["P","G","Y","B"],["B","P","Y","G"],["P","B","Y","G"],["Y","B","G","P"],["Y","P","B","G"],["Y","G","P","B"],["P", "B", "G", "Y"],["P", "B", "Y", "G"],["Y", "G", "P", "B"], ["P", "Y", "G", "B"], ["P", "B", "G", "Y"],["Y", "G", "B", "P"],["Y", "G", "P", "B"],["B", "P", "G", "Y"],["Y", "P", "B", "G"],["B", "Y", "G", "P"],["G", "B", "P", "Y"],["B", "G", "P", "Y"],["P", "G", "Y", "B"],["P", "B", "Y", "G"],["B", "G", "Y", "P"]]
 const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports", "Wearing clothes", "Transport","Poker","Things that run","Wanting emotion","Boring", "Body Parts","Video Games","Football","Genres","Captial Puns","Postage","Plant parts","London Underground names"]
 const day =  Math.floor((new Date() - new Date('2024-08-05')+3600000) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
