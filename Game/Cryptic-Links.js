@@ -94,7 +94,7 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["Gross D", "Ate in a world record", "To sing fast about your inner demons", "To drop a molten poisonous metal"],
 ["Harry Potter monster isn't very graphic", "To detect hair bugs", "Previous partner fact checked", "To mark it as correct"],
 ["Why have an impression", "To remain in anticipation", "I am Titanium", "Life on the inside"],
-["Out of a Ribena", "Be in on the reverse", "Retinal mix up", "To spend a life with a mistake"],
+["Out of a Ribena", "Be in on the inverse", "Retinal mix up", "To spend a life with a mistake"],
 ["Are with a beer", "A connection for a long time", "Analysis of data with charged particles", "To communicate with hands to a French-goer"]
 
 ]
@@ -141,9 +141,14 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["'then pale' is an anagram", "Tow is to hall", "Lizzie died recently", "Abbreviate both"],
 ["Roald as in Dahl","Take away 'H' from Hazel","Liam","To marry"],
 ["To nick","Swap 'her' and 'side'","Take out 'our'","Myrr is a gift to baby Jesus"],
+["Troll isn't R rated", "To sense", "Sourced", "To tick"],
+["Gross as in ew", "World record is 'wr'", "An inner demon is an id", "To drop a liquid is to spill"],
+["Why as in 'y'", "This is a definition", "Ti is Titanium", "Inner life"],
+["Take 'in a' out", "'Be' inside of 'on' inverted ", "Retinal anagram", "To live and to..."],
+["Synonym for 'beer'","'A long time' is 'ages'","Shorten 'statistics","'To go' in French"]
 ]
 const difflist =[["Y","G","P","B"],["Y","B","P","G"],["G","Y","P","B"],["Y","P","G","B"],["Y","P","B","G"],["B","P","Y","G"],["G","Y","B","P"],["P","B","Y","G"],["G","Y","B","P"],["Y","G","B","P"],["G","P","B","Y"],["P","G","B","Y"],["Y","B","G","P"],["G","B","Y","P"],["G","P","B","Y"],["Y","P","G","B"],["P","B","G","Y"],["G","P","Y","B"],["Y","P","G","B"],["P","B","Y","G"],["G","B","Y","P"], ["G","B","Y","P"],["B","Y","G","P"],["B","G","Y","P"],["G","Y","B","P"],["Y","G","B","P"],["P","G","Y","B"],["P","G","Y","B"],["B","P","Y","G"],["P","B","Y","G"],["Y","B","G","P"],["Y","P","B","G"],["Y","G","P","B"],["P", "B", "G", "Y"],["P", "B", "Y", "G"],["Y", "G", "P", "B"], ["P", "Y", "G", "B"], ["P", "B", "G", "Y"],["Y", "G", "B", "P"],["Y", "G", "P", "B"],["B", "P", "G", "Y"],["Y", "P", "B", "G"],["B", "Y", "G", "P"],["G", "B", "P", "Y"],["B", "G", "P", "Y"],["P", "G", "Y", "B"],["P", "B", "Y", "G"],["B", "G", "Y", "P"]]
-const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports", "Wearing clothes", "Transport","Poker","Things that run","Wanting emotion","Boring", "Body Parts","Video Games","Football","Genres","Captial Puns","Postage","Plant parts","London Underground names", "Flowers","Alcohol"]
+const topiclist=["","","","","","","","","","","","","","","","","","Birds","Clothing","Dinner Party","Wedding", "Colours", "Music Genres", "Numbers", "Insects", "Dinner Party","Olympic Sports", "Wearing clothes", "Transport","Poker","Things that run","Wanting emotion","Boring", "Body Parts","Video Games","Football","Genres","Captial Puns","Postage","Plant parts","London Underground names", "Flowers","Alcohol", "Car terms","Water","Measurable things","Meats","Trains"]
 const day =  Math.floor((new Date() - new Date('2024-08-05')+3600000) / (1000 * 60 * 60 * 24));
 const words = wordlist[day];
 const hints = hintslist[day];
