@@ -101,11 +101,11 @@ const cluelist =[["Transporting a letter", "To play a charge", "A holy man befor
 ["Why have an impression", "To remain in anticipation", "I am Titanium", "Life on the inside"],
 ["Out of a Ribena", "Be in on the inverse", "Retinal mix up", "To spend a life with a mistake"],
 ["Are with a beer", "A connection for a long time", "Analysis of data with charged particles", "To communicate with hands to a French-goer"]
-["Record text I see", "Read only in Guevera", "Learn of geranium", "Used to be part of your body"],
-["At the top", "What makes this the easiest", "", "Attempts remaining"],
-["The law pirate sound", "Mix Double R&B with Europe", "Football adjudicator with a cold", "Blend leg red"],
-["To bring up a motor", "Loot graphically", "A schedule on a rocky hill", "To hair again"],
-["A holy verse", "Pretty crafts", "Pirate sounds in back taps", "Thick liquid after the message"]
+["I see in text talk", "ROM is read-only", "Ed is a learning term", "Your body is made up of what?"],
+["Of this page", "e.g Purple", "On your own, the chance of getting it right is?", "How do you measure your score"],
+["arr...", "RBRBEU anagram", "A referee that is sick", "redleg anagram"],
+["To raise a car", "Graphic movie rating", "A rocky hill is a tor", "Fur is hair"],
+["A saint is holy", "Pretty as in 'p'", "Put 'r' in taps backwards", "Tar is a thick liquid"]
 ]
 const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviated","Miserable ___ is a dog type"],
 ["A female deer","textify 'well wishes","Ariel is the little mermaid","What are most houses made of?"],
