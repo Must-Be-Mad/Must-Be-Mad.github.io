@@ -154,12 +154,7 @@ const hintslist=[["Alphabet","To play a role is to...","A holy man is abbreviate
 ["Gross as in ew", "World record is 'wr'", "An inner demon is an id", "To drop a liquid is to spill"],
 ["Why as in 'y'", "This is a definition", "Ti is Titanium", "Inner life"],
 ["Take 'in a' out", "'Be' inside of 'on' inverted ", "Retinal anagram", "To live and to..."],
-["Synonym for 'beer'","'A long time' is 'ages'","Shorten 'statistics","'To go' in French"]
-["Record text I see", "Read only in Guevera", "Learn of geranium", "Used to be part of your body"],
-["At the top", "What makes this the easiest", "", "Attempts remaining"],
-["The law pirate sound", "Mix Double R&B with Europe", "Football adjudicator with a cold", "Blend leg red"],
-["To bring up a motor", "Loot graphically", "A schedule on a rocky hill", "To hair again"],
-["A holy verse", "Pretty crafts", "Pirate sounds in back taps", "Thick liquid after the message"],
+["Synonym for 'beer'","'A long time' is 'ages'","Shorten 'statistics","'To go' in French"],
 ["I see in text talk", "ROM is read-only", "Ed is a learning term", "Your body is made up of what?"],
 ["Of this page", "e.g Purple", "On your own, the chance of getting it right is?", "How do you measure your score"],
 ["arr...", "RBRBEU anagram", "A referee that is sick", "redleg anagram"],
