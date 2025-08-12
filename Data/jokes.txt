@@ -1,5 +1,5 @@
-Why was the hypercube graph so humble during graduation?
-They had a regular degree
+Why does no-one give the hypercube graph second looks?
+Its pretty regular
 oneliners
 
 I was thinking of the most optimal way to approach you.
@@ -2009,5 +2009,6 @@ oneliners
 What property does a particle in traffic have?
 Congestion charge
 oneliners
+
 
 
