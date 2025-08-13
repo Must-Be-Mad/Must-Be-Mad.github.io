@@ -1,3 +1,7 @@
+Why are topology exams so hard?
+Everything in it is open.
+oneliners
+
 Why does no-one give the hypercube graph second looks?
 Its pretty regular
 oneliners
@@ -2009,6 +2013,7 @@ oneliners
 What property does a particle in traffic have?
 Congestion charge
 oneliners
+
 
 
 
