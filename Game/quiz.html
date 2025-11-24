@@ -13,29 +13,56 @@
 
   <h2>Word Checker</h2>
 
-  <input type="text" id="wordInput" placeholder="Enter a word">
+  <input type="text" id="wordInput" placeholder="Enter a phrase">
   <button onclick="checkWord()">Check</button>
 
   <div id="results"></div>
 
 <script>
 function checkWord() {
-    const word = document.getElementById("wordInput").value;
-    let score = 0;
+    const input = document.getElementById("wordInput").value;
+    const lower = input.toLowerCase();
 
-    // Example IF conditions
-    if (word.length > 5) score++;
-    if (word.includes("a")) score++;
-    if (word === word.toUpperCase()) score++;
-    if (/^[a-zA-Z]+$/.test(word)) score++;
+    let resultsYN = [];
 
-    // Add new result
-    const resultDiv = document.getElementById("results");
+    // 1. Has a double letter
+    let hasDouble = false;
+    for (let i = 0; i < lower.length - 1; i++) {
+        if (lower[i] === lower[i + 1] && lower[i] !== " ") {
+            hasDouble = true;
+            break;
+        }
+    }
+    resultsYN.push(hasDouble ? "Y" : "N");
+
+    // 2. More than 5 vowels
+    const vowels = lower.match(/[aeiou]/g);
+    resultsYN.push(vowels && vowels.length > 5 ? "Y" : "N");
+
+    // 3. First letter capitalised
+    const isCap = input[0] && input[0] === input[0].toUpperCase() && /[A-Z]/.test(input[0]);
+    resultsYN.push(isCap ? "Y" : "N");
+
+    // 4. No "s"
+    resultsYN.push(!lower.includes("s") ? "Y" : "N");
+
+    // 5. nth segment is n-long
+    const segments = input.split(" ");
+    let validSegments = true;
+    for (let i = 0; i < segments.length; i++) {
+        if (segments[i].length !== i + 1) {
+            validSegments = false;
+            break;
+        }
+    }
+    resultsYN.push(validSegments ? "Y" : "N");
+
+    // Output pattern
+    const results = document.getElementById("results");
     const entry = document.createElement("p");
-    entry.textContent = word + " → Score: " + score;
-    resultDiv.appendChild(entry);
+    entry.textContent = input + " → " + resultsYN.join(" ");
+    results.appendChild(entry);
 
-    // Optional: clear input
     document.getElementById("wordInput").value = "";
 }
 </script>
