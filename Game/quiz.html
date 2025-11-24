@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Word Checker</h2>
+
+  <input type="text" id="wordInput" placeholder="Enter a word">
+  <button onclick="checkWord()">Check</button>
+
+  <div id="results"></div>
+
+<script>
+function checkWord() {
+    const word = document.getElementById("wordInput").value;
+    let score = 0;
+
+    // Example IF conditions
+    if (word.length > 5) score++;
+    if (word.includes("a")) score++;
+    if (word === word.toUpperCase()) score++;
+    if (/^[a-zA-Z]+$/.test(word)) score++;
+
+    // Add new result
+    const resultDiv = document.getElementById("results");
+    const entry = document.createElement("p");
+    entry.textContent = word + " → Score: " + score;
+    resultDiv.appendChild(entry);
+
+    // Optional: clear input
+    document.getElementById("wordInput").value = "";
+}
+</script>
+
+</body>
+</html>
